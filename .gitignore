@@ -1,0 +1,40 @@
+# MASSIVE raw data (re-created by scripts/download_massive.py)
+data/massive/*.jsonl
+data/massive/*.tar.gz
+# Virtual environment
+.venv/
+venv/
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Data
+data/
+
+# Models / checkpoints
+*.pt
+*.pth
+*.bin
+*.safetensors
+checkpoints/
+
+# Results / logs
+logs/
+results/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Tests
+tests/__pycache__/
+.pytest_cache/
