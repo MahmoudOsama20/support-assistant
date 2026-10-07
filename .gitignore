@@ -38,3 +38,6 @@ Thumbs.db
 # Tests
 tests/__pycache__/
 .pytest_cache/
+
+# Trained weights (large); metrics/predictions in results/runs/ ARE tracked
+results/runs/*/model/

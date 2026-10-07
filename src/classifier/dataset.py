@@ -282,3 +282,60 @@ def verify_dataset(
                 )
 
     return report
+
+# --------------------------------------------------------------------------- #
+# Labels and splits (Step 2)
+# --------------------------------------------------------------------------- #
+def build_labels(
+    records_by_locale: Mapping[str, Sequence[Record]],
+    expected_num: int | None = EXPECTED_NUM_INTENTS,
+) -> list[str]:
+    """Sorted unique intents from the *train* partitions of all locales.
+
+    Sorted order makes the label ids deterministic. The result is saved with
+    the model (labels.json) and is the only label mapping used downstream.
+    """
+    intents = {
+        r["intent"]
+        for records in records_by_locale.values()
+        for r in records
+        if r["partition"] == "train"
+    }
+    labels = sorted(intents)
+    if expected_num is not None and len(labels) != expected_num:
+        raise DatasetError(
+            f"Expected {expected_num} intents in train, found {len(labels)}"
+        )
+    return labels
+
+
+def check_labels_cover(records: Sequence[Record], labels: Sequence[str]) -> None:
+    """Fail loudly if any record has an intent that is not in the label map."""
+    unseen = sorted({r["intent"] for r in records} - set(labels))
+    if unseen:
+        raise DatasetError(f"Intents not in label map: {unseen[:10]}")
+
+
+def select_split(
+    records_by_locale: Mapping[str, Sequence[Record]],
+    partition: str,
+    locales: Sequence[str] = LOCALES,
+) -> list[Record]:
+    """Concatenate one official partition across locales (deterministic order)."""
+    if partition not in PARTITIONS:
+        raise ValueError(f"partition must be one of {PARTITIONS}, got {partition!r}")
+    selected: list[Record] = []
+    for locale in locales:
+        selected.extend(r for r in records_by_locale[locale] if r["partition"] == partition)
+    return selected
+
+
+def save_labels(labels: Sequence[str], path: Path) -> None:
+    Path(path).write_text(json.dumps(list(labels), ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+def load_labels(path: Path) -> list[str]:
+    path = Path(path)
+    if not path.is_file():
+        raise DatasetError(f"Label file not found: {path}")
+    return json.loads(path.read_text(encoding="utf-8"))
