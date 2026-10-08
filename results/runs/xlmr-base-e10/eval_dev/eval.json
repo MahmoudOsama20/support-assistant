@@ -1,0 +1,242 @@
+{
+  "partition": "dev",
+  "run_dir": "xlmr-base-e10",
+  "n": 4066,
+  "scopes": {
+    "overall": {
+      "n": 4066,
+      "accuracy": 0.8561239547466798,
+      "macro_f1": 0.8293000685702697,
+      "ci95": {
+        "accuracy": [
+          0.8448106246925725,
+          0.867929168716183
+        ],
+        "macro_f1": [
+          0.8078440367950258,
+          0.8463123609049318
+        ]
+      }
+    },
+    "ar-SA": {
+      "n": 2033,
+      "accuracy": 0.8273487456960157,
+      "macro_f1": 0.7856653892387666,
+      "ci95": {
+        "accuracy": [
+          0.8111165764879489,
+          0.8430890309886867
+        ],
+        "macro_f1": [
+          0.7557477353085729,
+          0.8133450948274541
+        ]
+      }
+    },
+    "en-US": {
+      "n": 2033,
+      "accuracy": 0.8848991637973438,
+      "macro_f1": 0.8714046216465409,
+      "ci95": {
+        "accuracy": [
+          0.8701426463354648,
+          0.8986719134284309
+        ],
+        "macro_f1": [
+          0.8455666776778001,
+          0.8945005649258307
+        ]
+      }
+    }
+  },
+  "top_confused_pairs": {
+    "ar-SA": [
+      {
+        "true": "qa_factoid",
+        "pred": "general_quirky",
+        "count": 13,
+        "share_of_true": 0.1444
+      },
+      {
+        "true": "general_quirky",
+        "pred": "news_query",
+        "count": 10,
+        "share_of_true": 0.0952
+      },
+      {
+        "true": "general_quirky",
+        "pred": "calendar_query",
+        "count": 7,
+        "share_of_true": 0.0667
+      },
+      {
+        "true": "qa_definition",
+        "pred": "general_quirky",
+        "count": 7,
+        "share_of_true": 0.1273
+      },
+      {
+        "true": "calendar_remove",
+        "pred": "calendar_query",
+        "count": 6,
+        "share_of_true": 0.1277
+      },
+      {
+        "true": "calendar_set",
+        "pred": "calendar_query",
+        "count": 6,
+        "share_of_true": 0.0458
+      },
+      {
+        "true": "calendar_query",
+        "pred": "calendar_set",
+        "count": 5,
+        "share_of_true": 0.049
+      },
+      {
+        "true": "play_radio",
+        "pred": "play_music",
+        "count": 5,
+        "share_of_true": 0.1087
+      },
+      {
+        "true": "social_post",
+        "pred": "general_quirky",
+        "count": 5,
+        "share_of_true": 0.1
+      },
+      {
+        "true": "transport_ticket",
+        "pred": "transport_query",
+        "count": 5,
+        "share_of_true": 0.2
+      },
+      {
+        "true": "datetime_query",
+        "pred": "calendar_query",
+        "count": 4,
+        "share_of_true": 0.0625
+      },
+      {
+        "true": "general_quirky",
+        "pred": "qa_factoid",
+        "count": 4,
+        "share_of_true": 0.0381
+      },
+      {
+        "true": "music_likeness",
+        "pred": "music_query",
+        "count": 4,
+        "share_of_true": 0.25
+      },
+      {
+        "true": "play_music",
+        "pred": "music_query",
+        "count": 4,
+        "share_of_true": 0.0325
+      },
+      {
+        "true": "calendar_query",
+        "pred": "alarm_query",
+        "count": 3,
+        "share_of_true": 0.0294
+      }
+    ],
+    "en-US": [
+      {
+        "true": "qa_factoid",
+        "pred": "general_quirky",
+        "count": 12,
+        "share_of_true": 0.1333
+      },
+      {
+        "true": "general_quirky",
+        "pred": "news_query",
+        "count": 9,
+        "share_of_true": 0.0857
+      },
+      {
+        "true": "qa_definition",
+        "pred": "general_quirky",
+        "count": 7,
+        "share_of_true": 0.1273
+      },
+      {
+        "true": "general_quirky",
+        "pred": "weather_query",
+        "count": 5,
+        "share_of_true": 0.0476
+      },
+      {
+        "true": "calendar_query",
+        "pred": "calendar_set",
+        "count": 4,
+        "share_of_true": 0.0392
+      },
+      {
+        "true": "calendar_set",
+        "pred": "calendar_query",
+        "count": 4,
+        "share_of_true": 0.0305
+      },
+      {
+        "true": "email_sendemail",
+        "pred": "email_query",
+        "count": 4,
+        "share_of_true": 0.0635
+      },
+      {
+        "true": "general_quirky",
+        "pred": "qa_definition",
+        "count": 4,
+        "share_of_true": 0.0381
+      },
+      {
+        "true": "music_query",
+        "pred": "music_likeness",
+        "count": 4,
+        "share_of_true": 0.1333
+      },
+      {
+        "true": "news_query",
+        "pred": "general_quirky",
+        "count": 4,
+        "share_of_true": 0.0488
+      },
+      {
+        "true": "calendar_query",
+        "pred": "news_query",
+        "count": 3,
+        "share_of_true": 0.0294
+      },
+      {
+        "true": "general_quirky",
+        "pred": "cooking_recipe",
+        "count": 3,
+        "share_of_true": 0.0286
+      },
+      {
+        "true": "general_quirky",
+        "pred": "datetime_query",
+        "count": 3,
+        "share_of_true": 0.0286
+      },
+      {
+        "true": "general_quirky",
+        "pred": "qa_factoid",
+        "count": 3,
+        "share_of_true": 0.0286
+      },
+      {
+        "true": "music_query",
+        "pred": "play_music",
+        "count": 3,
+        "share_of_true": 0.1
+      }
+    ]
+  },
+  "within_scenario_error_share": {
+    "ar-SA": 0.3247863247863248,
+    "en-US": 0.2692307692307692
+  }
+}

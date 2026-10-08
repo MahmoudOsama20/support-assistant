@@ -24,9 +24,7 @@ data/
 *.safetensors
 checkpoints/
 
-# Results / logs
-logs/
-results/
+logs/*.log
 
 # Jupyter
 .ipynb_checkpoints/

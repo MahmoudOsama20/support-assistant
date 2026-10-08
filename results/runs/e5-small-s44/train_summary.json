@@ -1,0 +1,13 @@
+{
+  "run_name": "e5-small-s44",
+  "model_name": "intfloat/multilingual-e5-small",
+  "num_parameters": 117676860,
+  "best_epoch": 10,
+  "best_dev_macro_f1": 0.8257094484965171,
+  "train_seconds": 862.3,
+  "device": "cuda",
+  "gpu": "Tesla T4",
+  "torch": "2.11.0+cu128",
+  "transformers": "5.16.1",
+  "subsampled": false
+}

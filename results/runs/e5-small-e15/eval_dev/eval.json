@@ -1,0 +1,242 @@
+{
+  "partition": "dev",
+  "run_dir": "e5-small-e15",
+  "n": 4066,
+  "scopes": {
+    "overall": {
+      "n": 4066,
+      "accuracy": 0.8507132316773242,
+      "macro_f1": 0.8285722688788041,
+      "ci95": {
+        "accuracy": [
+          0.8403775209050665,
+          0.8627643876045253
+        ],
+        "macro_f1": [
+          0.8075486966724152,
+          0.8438297877129245
+        ]
+      }
+    },
+    "ar-SA": {
+      "n": 2033,
+      "accuracy": 0.8175110673880964,
+      "macro_f1": 0.7945022845363889,
+      "ci95": {
+        "accuracy": [
+          0.8007870142646335,
+          0.8332513526807673
+        ],
+        "macro_f1": [
+          0.7618139661694407,
+          0.8167264850712347
+        ]
+      }
+    },
+    "en-US": {
+      "n": 2033,
+      "accuracy": 0.8839153959665519,
+      "macro_f1": 0.8628442456325459,
+      "ci95": {
+        "accuracy": [
+          0.869638465322184,
+          0.897196261682243
+        ],
+        "macro_f1": [
+          0.8330578472404765,
+          0.8860119275984334
+        ]
+      }
+    }
+  },
+  "top_confused_pairs": {
+    "ar-SA": [
+      {
+        "true": "general_quirky",
+        "pred": "news_query",
+        "count": 10,
+        "share_of_true": 0.0952
+      },
+      {
+        "true": "calendar_set",
+        "pred": "calendar_query",
+        "count": 9,
+        "share_of_true": 0.0687
+      },
+      {
+        "true": "qa_factoid",
+        "pred": "general_quirky",
+        "count": 9,
+        "share_of_true": 0.1
+      },
+      {
+        "true": "transport_ticket",
+        "pred": "transport_query",
+        "count": 9,
+        "share_of_true": 0.36
+      },
+      {
+        "true": "calendar_query",
+        "pred": "calendar_set",
+        "count": 6,
+        "share_of_true": 0.0588
+      },
+      {
+        "true": "calendar_remove",
+        "pred": "calendar_query",
+        "count": 6,
+        "share_of_true": 0.1277
+      },
+      {
+        "true": "calendar_query",
+        "pred": "calendar_remove",
+        "count": 5,
+        "share_of_true": 0.049
+      },
+      {
+        "true": "general_quirky",
+        "pred": "qa_factoid",
+        "count": 5,
+        "share_of_true": 0.0476
+      },
+      {
+        "true": "general_quirky",
+        "pred": "weather_query",
+        "count": 5,
+        "share_of_true": 0.0476
+      },
+      {
+        "true": "music_likeness",
+        "pred": "music_query",
+        "count": 5,
+        "share_of_true": 0.3125
+      },
+      {
+        "true": "takeaway_query",
+        "pred": "takeaway_order",
+        "count": 5,
+        "share_of_true": 0.2083
+      },
+      {
+        "true": "calendar_set",
+        "pred": "alarm_set",
+        "count": 4,
+        "share_of_true": 0.0305
+      },
+      {
+        "true": "recommendation_events",
+        "pred": "calendar_query",
+        "count": 4,
+        "share_of_true": 0.1538
+      },
+      {
+        "true": "alarm_set",
+        "pred": "calendar_set",
+        "count": 3,
+        "share_of_true": 0.0968
+      },
+      {
+        "true": "calendar_query",
+        "pred": "news_query",
+        "count": 3,
+        "share_of_true": 0.0294
+      }
+    ],
+    "en-US": [
+      {
+        "true": "general_quirky",
+        "pred": "news_query",
+        "count": 8,
+        "share_of_true": 0.0762
+      },
+      {
+        "true": "general_quirky",
+        "pred": "qa_factoid",
+        "count": 6,
+        "share_of_true": 0.0571
+      },
+      {
+        "true": "general_quirky",
+        "pred": "qa_definition",
+        "count": 5,
+        "share_of_true": 0.0476
+      },
+      {
+        "true": "general_quirky",
+        "pred": "weather_query",
+        "count": 5,
+        "share_of_true": 0.0476
+      },
+      {
+        "true": "qa_factoid",
+        "pred": "general_quirky",
+        "count": 5,
+        "share_of_true": 0.0556
+      },
+      {
+        "true": "calendar_set",
+        "pred": "calendar_query",
+        "count": 4,
+        "share_of_true": 0.0305
+      },
+      {
+        "true": "recommendation_locations",
+        "pred": "takeaway_order",
+        "count": 4,
+        "share_of_true": 0.129
+      },
+      {
+        "true": "calendar_query",
+        "pred": "calendar_set",
+        "count": 3,
+        "share_of_true": 0.0294
+      },
+      {
+        "true": "calendar_query",
+        "pred": "datetime_query",
+        "count": 3,
+        "share_of_true": 0.0294
+      },
+      {
+        "true": "datetime_query",
+        "pred": "calendar_query",
+        "count": 3,
+        "share_of_true": 0.0469
+      },
+      {
+        "true": "email_sendemail",
+        "pred": "email_query",
+        "count": 3,
+        "share_of_true": 0.0476
+      },
+      {
+        "true": "general_quirky",
+        "pred": "calendar_query",
+        "count": 3,
+        "share_of_true": 0.0286
+      },
+      {
+        "true": "general_quirky",
+        "pred": "cooking_recipe",
+        "count": 3,
+        "share_of_true": 0.0286
+      },
+      {
+        "true": "play_music",
+        "pred": "play_game",
+        "count": 3,
+        "share_of_true": 0.0244
+      },
+      {
+        "true": "play_music",
+        "pred": "play_radio",
+        "count": 3,
+        "share_of_true": 0.0244
+      }
+    ]
+  },
+  "within_scenario_error_share": {
+    "ar-SA": 0.32345013477088946,
+    "en-US": 0.288135593220339
+  }
+}

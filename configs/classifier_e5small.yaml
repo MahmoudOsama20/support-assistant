@@ -1,0 +1,15 @@
+# Efficiency challenger: ~118M params, 12 layers x 384-d.
+model_name: intfloat/multilingual-e5-small
+run_name: e5-small
+output_dir: results/runs
+
+max_length: 64
+batch_size: 32
+eval_batch_size: 128
+learning_rate: 5.0e-5   # smaller models usually tolerate a higher LR
+weight_decay: 0.01
+warmup_ratio: 0.1
+epochs: 5
+patience: 2
+seed: 42
+fp16: true

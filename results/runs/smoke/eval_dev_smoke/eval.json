@@ -1,0 +1,242 @@
+{
+  "partition": "dev",
+  "run_dir": "smoke",
+  "n": 128,
+  "scopes": {
+    "overall": {
+      "n": 128,
+      "accuracy": 0.0078125,
+      "macro_f1": 0.00035236081747709656,
+      "ci95": {
+        "accuracy": [
+          0.0,
+          0.02949218749999999
+        ],
+        "macro_f1": [
+          0.0,
+          0.0016282508839760741
+        ]
+      }
+    },
+    "ar-SA": {
+      "n": 66,
+      "accuracy": 0.0,
+      "macro_f1": 0.0,
+      "ci95": {
+        "accuracy": [
+          0.0,
+          0.0
+        ],
+        "macro_f1": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "en-US": {
+      "n": 62,
+      "accuracy": 0.016129032258064516,
+      "macro_f1": 0.001221001221001221,
+      "ci95": {
+        "accuracy": [
+          0.0,
+          0.06088709677419352
+        ],
+        "macro_f1": [
+          0.0,
+          0.005177438884532705
+        ]
+      }
+    }
+  },
+  "top_confused_pairs": {
+    "ar-SA": [
+      {
+        "true": "calendar_set",
+        "pred": "lists_remove",
+        "count": 7,
+        "share_of_true": 1.0
+      },
+      {
+        "true": "play_music",
+        "pred": "lists_remove",
+        "count": 6,
+        "share_of_true": 1.0
+      },
+      {
+        "true": "calendar_query",
+        "pred": "lists_remove",
+        "count": 4,
+        "share_of_true": 1.0
+      },
+      {
+        "true": "news_query",
+        "pred": "lists_remove",
+        "count": 4,
+        "share_of_true": 1.0
+      },
+      {
+        "true": "general_quirky",
+        "pred": "lists_remove",
+        "count": 3,
+        "share_of_true": 1.0
+      },
+      {
+        "true": "play_audiobook",
+        "pred": "lists_remove",
+        "count": 3,
+        "share_of_true": 1.0
+      },
+      {
+        "true": "audio_volume_mute",
+        "pred": "lists_remove",
+        "count": 2,
+        "share_of_true": 1.0
+      },
+      {
+        "true": "datetime_query",
+        "pred": "lists_remove",
+        "count": 2,
+        "share_of_true": 1.0
+      },
+      {
+        "true": "email_sendemail",
+        "pred": "lists_remove",
+        "count": 2,
+        "share_of_true": 1.0
+      },
+      {
+        "true": "iot_cleaning",
+        "pred": "lists_remove",
+        "count": 2,
+        "share_of_true": 1.0
+      },
+      {
+        "true": "iot_wemo_on",
+        "pred": "lists_remove",
+        "count": 2,
+        "share_of_true": 1.0
+      },
+      {
+        "true": "music_query",
+        "pred": "lists_remove",
+        "count": 2,
+        "share_of_true": 1.0
+      },
+      {
+        "true": "qa_maths",
+        "pred": "lists_remove",
+        "count": 2,
+        "share_of_true": 1.0
+      },
+      {
+        "true": "recommendation_events",
+        "pred": "lists_remove",
+        "count": 2,
+        "share_of_true": 1.0
+      },
+      {
+        "true": "social_post",
+        "pred": "lists_remove",
+        "count": 2,
+        "share_of_true": 1.0
+      }
+    ],
+    "en-US": [
+      {
+        "true": "play_music",
+        "pred": "lists_remove",
+        "count": 9,
+        "share_of_true": 1.0
+      },
+      {
+        "true": "weather_query",
+        "pred": "lists_remove",
+        "count": 6,
+        "share_of_true": 1.0
+      },
+      {
+        "true": "general_quirky",
+        "pred": "lists_remove",
+        "count": 5,
+        "share_of_true": 1.0
+      },
+      {
+        "true": "calendar_query",
+        "pred": "lists_remove",
+        "count": 4,
+        "share_of_true": 1.0
+      },
+      {
+        "true": "calendar_set",
+        "pred": "lists_remove",
+        "count": 4,
+        "share_of_true": 1.0
+      },
+      {
+        "true": "email_query",
+        "pred": "lists_remove",
+        "count": 3,
+        "share_of_true": 1.0
+      },
+      {
+        "true": "play_radio",
+        "pred": "lists_remove",
+        "count": 3,
+        "share_of_true": 1.0
+      },
+      {
+        "true": "qa_definition",
+        "pred": "lists_remove",
+        "count": 3,
+        "share_of_true": 1.0
+      },
+      {
+        "true": "transport_ticket",
+        "pred": "lists_remove",
+        "count": 3,
+        "share_of_true": 1.0
+      },
+      {
+        "true": "datetime_query",
+        "pred": "lists_remove",
+        "count": 2,
+        "share_of_true": 1.0
+      },
+      {
+        "true": "email_sendemail",
+        "pred": "lists_remove",
+        "count": 2,
+        "share_of_true": 1.0
+      },
+      {
+        "true": "lists_query",
+        "pred": "lists_remove",
+        "count": 2,
+        "share_of_true": 1.0
+      },
+      {
+        "true": "news_query",
+        "pred": "lists_remove",
+        "count": 2,
+        "share_of_true": 1.0
+      },
+      {
+        "true": "recommendation_locations",
+        "pred": "lists_remove",
+        "count": 2,
+        "share_of_true": 1.0
+      },
+      {
+        "true": "alarm_remove",
+        "pred": "lists_remove",
+        "count": 1,
+        "share_of_true": 1.0
+      }
+    ]
+  },
+  "within_scenario_error_share": {
+    "ar-SA": 0.015151515151515152,
+    "en-US": 0.03278688524590164
+  }
+}

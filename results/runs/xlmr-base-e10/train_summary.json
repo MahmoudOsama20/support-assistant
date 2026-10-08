@@ -1,0 +1,13 @@
+{
+  "run_name": "xlmr-base-e10",
+  "model_name": "xlm-roberta-base",
+  "num_parameters": 278089788,
+  "best_epoch": 6,
+  "best_dev_macro_f1": 0.8293970528534376,
+  "train_seconds": 986.9,
+  "device": "cuda",
+  "gpu": "Tesla T4",
+  "torch": "2.11.0+cu128",
+  "transformers": "5.16.1",
+  "subsampled": false
+}

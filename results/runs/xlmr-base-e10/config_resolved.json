@@ -1,0 +1,15 @@
+{
+  "model_name": "xlm-roberta-base",
+  "run_name": "xlmr-base-e10",
+  "output_dir": "results/runs",
+  "max_length": 64,
+  "batch_size": 32,
+  "eval_batch_size": 128,
+  "learning_rate": 3e-05,
+  "weight_decay": 0.01,
+  "warmup_ratio": 0.1,
+  "epochs": 10,
+  "patience": 2,
+  "seed": 42,
+  "fp16": true
+}

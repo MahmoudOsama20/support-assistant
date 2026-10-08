@@ -1,0 +1,128 @@
+{"id": "5060", "locale": "en-US", "utt": "tell me when there is new news from my local news", "true": "news_query", "pred": "lists_remove", "confidence": 0.023}
+{"id": "3926", "locale": "ar-SA", "utt": "كم تساقط ثلج حتى اليوم في مكة", "true": "weather_query", "pred": "lists_remove", "confidence": 0.0229}
+{"id": "835", "locale": "ar-SA", "utt": "ما هي أحدث شائعات حول هوليود", "true": "news_query", "pred": "lists_remove", "confidence": 0.0229}
+{"id": "8606", "locale": "en-US", "utt": "i want to meet with sara tomorrow", "true": "calendar_set", "pred": "lists_remove", "confidence": 0.023}
+{"id": "9688", "locale": "ar-SA", "utt": "ابدأ الفصل السابع من الخيتانا", "true": "play_audiobook", "pred": "lists_remove", "confidence": 0.0229}
+{"id": "8602", "locale": "ar-SA", "utt": "وين عنوان مكان الاجتماع بالجدول في الاول من يناير", "true": "calendar_query", "pred": "lists_remove", "confidence": 0.0229}
+{"id": "7753", "locale": "ar-SA", "utt": "الاثنين", "true": "calendar_query", "pred": "lists_remove", "confidence": 0.0229}
+{"id": "4911", "locale": "ar-SA", "utt": "قول لي نكتة", "true": "general_joke", "pred": "lists_remove", "confidence": 0.023}
+{"id": "8418", "locale": "en-US", "utt": "what reminders do i have set", "true": "calendar_query", "pred": "lists_remove", "confidence": 0.023}
+{"id": "3609", "locale": "ar-SA", "utt": "تكفى سويلي قهوة", "true": "iot_coffee", "pred": "lists_remove", "confidence": 0.0231}
+{"id": "6240", "locale": "en-US", "utt": "today i got rewards olly", "true": "general_quirky", "pred": "lists_remove", "confidence": 0.0231}
+{"id": "8578", "locale": "en-US", "utt": "what meetings do i have between eight ten today", "true": "calendar_query", "pred": "lists_remove", "confidence": 0.0229}
+{"id": "13540", "locale": "en-US", "utt": "look up the definition to ambulance", "true": "qa_definition", "pred": "lists_remove", "confidence": 0.0231}
+{"id": "1834", "locale": "en-US", "utt": "play my most listened songs", "true": "play_music", "pred": "lists_remove", "confidence": 0.023}
+{"id": "2991", "locale": "ar-SA", "utt": "اتجه لأخبار كاظم", "true": "news_query", "pred": "lists_remove", "confidence": 0.0232}
+{"id": "3248", "locale": "en-US", "utt": "cancel alarm for tomorrow", "true": "alarm_remove", "pred": "lists_remove", "confidence": 0.023}
+{"id": "14527", "locale": "ar-SA", "utt": "سعر الصرف اللي بحصله بالعملة الأجنبية", "true": "qa_currency", "pred": "lists_remove", "confidence": 0.023}
+{"id": "1192", "locale": "ar-SA", "utt": "ابي اسمع ما أرضى عليه حق جابر الكاسر الحين", "true": "play_music", "pred": "lists_remove", "confidence": 0.023}
+{"id": "1058", "locale": "ar-SA", "utt": "وحدة الظهر اليوم روبوت مكنسة الكهربا", "true": "iot_cleaning", "pred": "lists_remove", "confidence": 0.0229}
+{"id": "3203", "locale": "ar-SA", "utt": "شوف قائمة الأغاني حقي لو سمحت", "true": "music_likeness", "pred": "lists_remove", "confidence": 0.023}
+{"id": "7646", "locale": "ar-SA", "utt": "هل عندي أي تذكير على قائمة الانتظار", "true": "calendar_query", "pred": "lists_remove", "confidence": 0.0229}
+{"id": "8089", "locale": "ar-SA", "utt": "متى اجتماعي", "true": "calendar_set", "pred": "lists_remove", "confidence": 0.0231}
+{"id": "312", "locale": "en-US", "utt": "it's too dark here", "true": "iot_hue_lighton", "pred": "lists_remove", "confidence": 0.023}
+{"id": "3712", "locale": "en-US", "utt": "play my current playlist from top", "true": "play_music", "pred": "lists_remove", "confidence": 0.0231}
+{"id": "921", "locale": "ar-SA", "utt": "شغل موسيقى للفنان المفضل حقي", "true": "play_music", "pred": "lists_remove", "confidence": 0.023}
+{"id": "2392", "locale": "en-US", "utt": "i want to hear love me", "true": "play_music", "pred": "lists_remove", "confidence": 0.023}
+{"id": "6908", "locale": "ar-SA", "utt": "أبغى منبه كل يوم الساعة تسعة الصباح", "true": "calendar_set", "pred": "lists_remove", "confidence": 0.023}
+{"id": "7676", "locale": "en-US", "utt": "list out the upcoming meeting", "true": "calendar_set", "pred": "lists_remove", "confidence": 0.023}
+{"id": "5376", "locale": "en-US", "utt": "please show me weather on twenty seventh march two thousand seventeen", "true": "weather_query", "pred": "lists_remove", "confidence": 0.0231}
+{"id": "7086", "locale": "en-US", "utt": "remove today's meeting at evening", "true": "calendar_remove", "pred": "lists_remove", "confidence": 0.0229}
+{"id": "1827", "locale": "en-US", "utt": "what's going on in new york", "true": "news_query", "pred": "lists_remove", "confidence": 0.0229}
+{"id": "14408", "locale": "ar-SA", "utt": "علمني مين انت بكلمة واحدة", "true": "general_quirky", "pred": "lists_remove", "confidence": 0.023}
+{"id": "7688", "locale": "ar-SA", "utt": "هل عندي أي منبهات معلقة", "true": "calendar_query", "pred": "lists_remove", "confidence": 0.0229}
+{"id": "15396", "locale": "ar-SA", "utt": "الرجاء تقديم شكوى إلى كارفور", "true": "social_post", "pred": "lists_remove", "confidence": 0.023}
+{"id": "3194", "locale": "en-US", "utt": "siri play my pop playlist", "true": "play_music", "pred": "lists_remove", "confidence": 0.0232}
+{"id": "9778", "locale": "ar-SA", "utt": "شغل فن التعامل مع الناس", "true": "play_audiobook", "pred": "lists_remove", "confidence": 0.023}
+{"id": "10865", "locale": "en-US", "utt": "olly what else do i have on the list", "true": "lists_query", "pred": "lists_remove", "confidence": 0.023}
+{"id": "12834", "locale": "en-US", "utt": "get me a train ticket to chicago today", "true": "transport_ticket", "pred": "lists_remove", "confidence": 0.023}
+{"id": "229", "locale": "ar-SA", "utt": "كم الساعة في أبو ظبي", "true": "datetime_query", "pred": "lists_remove", "confidence": 0.023}
+{"id": "9208", "locale": "en-US", "utt": "play some radio", "true": "play_radio", "pred": "lists_remove", "confidence": 0.0231}
+{"id": "10754", "locale": "en-US", "utt": "read back what i put on my to do list for this week", "true": "lists_query", "pred": "lists_remove", "confidence": 0.023}
+{"id": "5561", "locale": "ar-SA", "utt": "أقرأ لي أخبار اليوم", "true": "news_query", "pred": "lists_remove", "confidence": 0.023}
+{"id": "6985", "locale": "en-US", "utt": "what is my afternoon schedule tomorrow", "true": "calendar_query", "pred": "lists_remove", "confidence": 0.023}
+{"id": "14565", "locale": "ar-SA", "utt": "ما هي القضية الأكثر إثارة للقلق في مصر اليوم وماذا يمكن عمله للتعامل معها بفاعلية", "true": "general_quirky", "pred": "lists_remove", "confidence": 0.0229}
+{"id": "11712", "locale": "ar-SA", "utt": "قول لي عن كل الفعاليات المحلية", "true": "recommendation_events", "pred": "lists_remove", "confidence": 0.023}
+{"id": "9775", "locale": "ar-SA", "utt": "كمل قراية الكتاب الصوتي حقي من بداية آخر فصل بديت فيه أنا", "true": "play_audiobook", "pred": "lists_remove", "confidence": 0.0229}
+{"id": "5453", "locale": "ar-SA", "utt": "أحتاج جاكيت بعد العشرة الصبح أو لا", "true": "weather_query", "pred": "lists_remove", "confidence": 0.023}
+{"id": "7495", "locale": "ar-SA", "utt": "ذكرني بكره عندي مقابلة", "true": "calendar_set", "pred": "lists_remove", "confidence": 0.023}
+{"id": "15858", "locale": "en-US", "utt": "send this content via email", "true": "email_sendemail", "pred": "lists_remove", "confidence": 0.0233}
+{"id": "9375", "locale": "en-US", "utt": "play nine hundred and seventy one", "true": "play_radio", "pred": "lists_remove", "confidence": 0.0229}
+{"id": "11611", "locale": "ar-SA", "utt": "ايش الحفلات المعلنة قريبا", "true": "recommendation_events", "pred": "lists_remove", "confidence": 0.0228}
+{"id": "3602", "locale": "ar-SA", "utt": "ما هي آخر الأخبار عن الانتخابات اللبنانية", "true": "news_query", "pred": "lists_remove", "confidence": 0.0229}
+{"id": "3183", "locale": "ar-SA", "utt": "إيقاف التشغيل", "true": "iot_wemo_off", "pred": "lists_remove", "confidence": 0.0231}
+{"id": "13033", "locale": "ar-SA", "utt": "ما هو ثلاثة ضرب سبعة", "true": "qa_maths", "pred": "lists_remove", "confidence": 0.0229}
+{"id": "3394", "locale": "ar-SA", "utt": "لو سمحت شغل فيش التوصيلة حقي", "true": "iot_wemo_on", "pred": "lists_remove", "confidence": 0.023}
+{"id": "12372", "locale": "ar-SA", "utt": "أوبر", "true": "transport_taxi", "pred": "lists_remove", "confidence": 0.023}
+{"id": "12149", "locale": "en-US", "utt": "olly book a ticket to paris on eurostar at five p. m. this friday", "true": "transport_ticket", "pred": "lists_remove", "confidence": 0.023}
+{"id": "11851", "locale": "ar-SA", "utt": "ايش الأفلام اللي تنعرض قريب مني وتقييماتها عالية", "true": "recommendation_movies", "pred": "lists_remove", "confidence": 0.0229}
+{"id": "3758", "locale": "en-US", "utt": "after this play me rebel yell", "true": "play_music", "pred": "lists_remove", "confidence": 0.023}
+{"id": "9280", "locale": "ar-SA", "utt": "بليز شغل محطة fm", "true": "play_radio", "pred": "lists_remove", "confidence": 0.023}
+{"id": "10784", "locale": "en-US", "utt": "delete my to do list", "true": "lists_remove", "pred": "lists_remove", "confidence": 0.023}
+{"id": "1599", "locale": "ar-SA", "utt": "تكفى شغل roomba", "true": "iot_cleaning", "pred": "lists_remove", "confidence": 0.0231}
+{"id": "8127", "locale": "en-US", "utt": "meeting update my calendar to reflect meeting", "true": "calendar_set", "pred": "lists_remove", "confidence": 0.023}
+{"id": "15786", "locale": "ar-SA", "utt": "في أي ايميل من خديجة", "true": "email_query", "pred": "lists_remove", "confidence": 0.0231}
+{"id": "1430", "locale": "en-US", "utt": "find and queue all songs of kate perry and play all without shuffling", "true": "play_music", "pred": "lists_remove", "confidence": 0.023}
+{"id": "4497", "locale": "ar-SA", "utt": "اكتم الإعدادات", "true": "audio_volume_mute", "pred": "lists_remove", "confidence": 0.0231}
+{"id": "16421", "locale": "en-US", "utt": "how many unread emails do i have", "true": "email_query", "pred": "lists_remove", "confidence": 0.0232}
+{"id": "14669", "locale": "en-US", "utt": "define xy", "true": "qa_definition", "pred": "lists_remove", "confidence": 0.0231}
+{"id": "12978", "locale": "ar-SA", "utt": "بحث في الأسماء", "true": "qa_maths", "pred": "lists_remove", "confidence": 0.023}
+{"id": "2763", "locale": "ar-SA", "utt": "أرني الوقت", "true": "datetime_query", "pred": "lists_remove", "confidence": 0.0231}
+{"id": "2088", "locale": "en-US", "utt": "let's hear some country and western not from the us", "true": "play_music", "pred": "lists_remove", "confidence": 0.0229}
+{"id": "10267", "locale": "ar-SA", "utt": "اش عن لعبة شطرنج زينة", "true": "play_game", "pred": "lists_remove", "confidence": 0.023}
+{"id": "11496", "locale": "en-US", "utt": "play good mythical morning podcast", "true": "play_podcasts", "pred": "lists_remove", "confidence": 0.0231}
+{"id": "4705", "locale": "en-US", "utt": "what is the forecast in me area today", "true": "weather_query", "pred": "lists_remove", "confidence": 0.0229}
+{"id": "4360", "locale": "en-US", "utt": "i want to hear great music", "true": "play_music", "pred": "lists_remove", "confidence": 0.023}
+{"id": "13349", "locale": "en-US", "utt": "answer this question what's the first boss in super mario brothers", "true": "general_quirky", "pred": "lists_remove", "confidence": 0.0231}
+{"id": "12593", "locale": "en-US", "utt": "olly please purchase me a train ticket to atlanta", "true": "transport_ticket", "pred": "lists_remove", "confidence": 0.0231}
+{"id": "12461", "locale": "ar-SA", "utt": "قطار تذكرة", "true": "transport_ticket", "pred": "lists_remove", "confidence": 0.0231}
+{"id": "2825", "locale": "en-US", "utt": "what day does april sixteenth fall on", "true": "datetime_query", "pred": "lists_remove", "confidence": 0.023}
+{"id": "6675", "locale": "ar-SA", "utt": "إذا كان بإمكانك التحدث عن ثلاثة أشياء فماذا ستكون", "true": "general_quirky", "pred": "lists_remove", "confidence": 0.0229}
+{"id": "7223", "locale": "en-US", "utt": "tell me the date of inauguration of my friend sams business", "true": "calendar_query", "pred": "lists_remove", "confidence": 0.0231}
+{"id": "2526", "locale": "ar-SA", "utt": "ابغى أسمع شوية زفات", "true": "play_music", "pred": "lists_remove", "confidence": 0.0229}
+{"id": "1696", "locale": "ar-SA", "utt": "أغنية", "true": "music_query", "pred": "lists_remove", "confidence": 0.0231}
+{"id": "5726", "locale": "en-US", "utt": "can you speak louder", "true": "audio_volume_up", "pred": "lists_remove", "confidence": 0.0232}
+{"id": "7930", "locale": "ar-SA", "utt": "ذكرني اختبار الأحياء حقي في المدرسة يوم الجمعة", "true": "calendar_set", "pred": "lists_remove", "confidence": 0.023}
+{"id": "9736", "locale": "en-US", "utt": "play recently added audiobook", "true": "play_audiobook", "pred": "lists_remove", "confidence": 0.0231}
+{"id": "10152", "locale": "ar-SA", "utt": "هات وصفة طبخ المفطح", "true": "cooking_recipe", "pred": "lists_remove", "confidence": 0.0229}
+{"id": "16843", "locale": "en-US", "utt": "check my mail", "true": "email_query", "pred": "lists_remove", "confidence": 0.0232}
+{"id": "2797", "locale": "ar-SA", "utt": "اكتم الصوت حق السماعات", "true": "audio_volume_mute", "pred": "lists_remove", "confidence": 0.0231}
+{"id": "12372", "locale": "en-US", "utt": "get me an uber", "true": "transport_taxi", "pred": "lists_remove", "confidence": 0.023}
+{"id": "8101", "locale": "ar-SA", "utt": "olly أرسل ايميلات لمواعيدي وخلهم يحددون مواعيد ثانية", "true": "email_sendemail", "pred": "lists_remove", "confidence": 0.023}
+{"id": "12741", "locale": "en-US", "utt": "what street do i take to get to downtown", "true": "transport_query", "pred": "lists_remove", "confidence": 0.023}
+{"id": "3551", "locale": "ar-SA", "utt": "شغلي ألبوم فيروز الرابع", "true": "play_music", "pred": "lists_remove", "confidence": 0.023}
+{"id": "15533", "locale": "ar-SA", "utt": "غرد إلى كارفور وأخبرهم أن لديهم أسوأ خدمة عملاء", "true": "social_post", "pred": "lists_remove", "confidence": 0.0228}
+{"id": "4908", "locale": "en-US", "utt": "open some cools jokes", "true": "general_joke", "pred": "lists_remove", "confidence": 0.0231}
+{"id": "11631", "locale": "en-US", "utt": "i need some sushi what's closest", "true": "recommendation_locations", "pred": "lists_remove", "confidence": 0.0231}
+{"id": "12575", "locale": "ar-SA", "utt": "جدة قطار تذكرة", "true": "transport_ticket", "pred": "lists_remove", "confidence": 0.023}
+{"id": "5653", "locale": "ar-SA", "utt": "wemo plug socket", "true": "iot_wemo_on", "pred": "lists_remove", "confidence": 0.0232}
+{"id": "12741", "locale": "ar-SA", "utt": "أي طريق امشي فيه عشان اروح وسط المدينة", "true": "transport_query", "pred": "lists_remove", "confidence": 0.0229}
+{"id": "12267", "locale": "ar-SA", "utt": "الرياض مكة", "true": "transport_query", "pred": "lists_remove", "confidence": 0.0231}
+{"id": "7279", "locale": "ar-SA", "utt": "ذكرني آخذ الغسيل الإثنين الجاي", "true": "calendar_set", "pred": "lists_remove", "confidence": 0.023}
+{"id": "6089", "locale": "en-US", "utt": "do i need to take an umbrella with me this afternoon", "true": "weather_query", "pred": "lists_remove", "confidence": 0.023}
+{"id": "9371", "locale": "ar-SA", "utt": "شغل أغنية تخليني ابتسم", "true": "play_music", "pred": "lists_remove", "confidence": 0.0229}
+{"id": "7104", "locale": "en-US", "utt": "make a calendar entry for brunch on saturday morning with chris kimberly and aaronson", "true": "calendar_set", "pred": "lists_remove", "confidence": 0.023}
+{"id": "15093", "locale": "en-US", "utt": "olly find a description about a samsung t. v.", "true": "qa_definition", "pred": "lists_remove", "confidence": 0.023}
+{"id": "6513", "locale": "en-US", "utt": "fashion", "true": "general_quirky", "pred": "lists_remove", "confidence": 0.023}
+{"id": "5322", "locale": "en-US", "utt": "what is the weather like in miami florida today", "true": "weather_query", "pred": "lists_remove", "confidence": 0.023}
+{"id": "2582", "locale": "ar-SA", "utt": "خبرني اسم المطرب", "true": "music_query", "pred": "lists_remove", "confidence": 0.0231}
+{"id": "3970", "locale": "en-US", "utt": "what's the weather right now", "true": "weather_query", "pred": "lists_remove", "confidence": 0.0229}
+{"id": "4892", "locale": "en-US", "utt": "tune in some music", "true": "play_music", "pred": "lists_remove", "confidence": 0.0231}
+{"id": "5968", "locale": "ar-SA", "utt": "ابي اطلب اكل", "true": "takeaway_order", "pred": "lists_remove", "confidence": 0.023}
+{"id": "1327", "locale": "en-US", "utt": "what is weather today", "true": "weather_query", "pred": "lists_remove", "confidence": 0.023}
+{"id": "8101", "locale": "en-US", "utt": "olly email my appointments to reschedule", "true": "email_sendemail", "pred": "lists_remove", "confidence": 0.0231}
+{"id": "8594", "locale": "ar-SA", "utt": "سجل تنبيه في التقويم حقي لحفلة المسبح في بيت سعود هذا السبت", "true": "calendar_set", "pred": "lists_remove", "confidence": 0.0228}
+{"id": "5667", "locale": "ar-SA", "utt": "اضغط ابدأ بعدين اختار settings", "true": "alarm_query", "pred": "lists_remove", "confidence": 0.023}
+{"id": "15900", "locale": "ar-SA", "utt": "شنو كنية مالك", "true": "email_querycontact", "pred": "lists_remove", "confidence": 0.0231}
+{"id": "13024", "locale": "ar-SA", "utt": "أرسل email لصديقتي", "true": "email_sendemail", "pred": "lists_remove", "confidence": 0.0232}
+{"id": "9459", "locale": "ar-SA", "utt": "لو سمحت شغل top country", "true": "play_music", "pred": "lists_remove", "confidence": 0.023}
+{"id": "17046", "locale": "en-US", "utt": "please let me know new emails from michael", "true": "email_query", "pred": "lists_remove", "confidence": 0.0232}
+{"id": "14773", "locale": "en-US", "utt": "alexa give me everything you know about bob dean", "true": "qa_factoid", "pred": "lists_remove", "confidence": 0.023}
+{"id": "5064", "locale": "en-US", "utt": "replace color from light to dark", "true": "iot_hue_lightchange", "pred": "lists_remove", "confidence": 0.023}
+{"id": "6655", "locale": "en-US", "utt": "ingredients needed at grocery store", "true": "general_quirky", "pred": "lists_remove", "confidence": 0.0231}
+{"id": "2200", "locale": "en-US", "utt": "how many weeks are left for christmas", "true": "datetime_query", "pred": "lists_remove", "confidence": 0.023}
+{"id": "7676", "locale": "ar-SA", "utt": "إجتماع", "true": "calendar_set", "pred": "lists_remove", "confidence": 0.0231}
+{"id": "6558", "locale": "en-US", "utt": "do you like my girlfriend", "true": "general_quirky", "pred": "lists_remove", "confidence": 0.023}
+{"id": "11178", "locale": "ar-SA", "utt": "سوي قائمة بمقاضي البيت الشهرية عشان أشتريها", "true": "lists_createoradd", "pred": "lists_remove", "confidence": 0.023}
+{"id": "11962", "locale": "en-US", "utt": "olly what bars are around me", "true": "recommendation_locations", "pred": "lists_remove", "confidence": 0.0229}
+{"id": "9589", "locale": "en-US", "utt": "ok google can you start ryan seacrest", "true": "play_radio", "pred": "lists_remove", "confidence": 0.0231}

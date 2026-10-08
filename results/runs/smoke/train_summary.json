@@ -1,0 +1,13 @@
+{
+  "run_name": "smoke",
+  "model_name": "xlm-roberta-base",
+  "num_parameters": 278089788,
+  "best_epoch": 1,
+  "best_dev_macro_f1": 0.00035236081747709656,
+  "train_seconds": 85.0,
+  "device": "cpu",
+  "gpu": null,
+  "torch": "2.14.1+cu126",
+  "transformers": "5.19.0",
+  "subsampled": true
+}
