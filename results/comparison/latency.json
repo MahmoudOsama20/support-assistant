@@ -1,0 +1,62 @@
+[
+  {
+    "run": "e5-small-e15",
+    "device": "cpu",
+    "n_timed": 250,
+    "warmup": 20,
+    "p50_ms": 12.016050000056566,
+    "p95_ms": 15.927410000097098,
+    "mean_ms": 12.342525999994905,
+    "n_params": 117676860,
+    "model_dir_mb": 487.819624,
+    "torch": "2.14.1+cu126",
+    "torch_threads": 8,
+    "cpu": "Intel64 Family 6 Model 141 Stepping 1, GenuineIntel",
+    "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU"
+  },
+  {
+    "run": "e5-small-e15",
+    "device": "cuda",
+    "n_timed": 250,
+    "warmup": 20,
+    "p50_ms": 6.632249999938722,
+    "p95_ms": 7.457170000122915,
+    "mean_ms": 6.726618799991229,
+    "n_params": 117676860,
+    "model_dir_mb": 487.819624,
+    "torch": "2.14.1+cu126",
+    "torch_threads": 8,
+    "cpu": "Intel64 Family 6 Model 141 Stepping 1, GenuineIntel",
+    "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU"
+  },
+  {
+    "run": "xlmr-base-e10",
+    "device": "cpu",
+    "n_timed": 250,
+    "warmup": 20,
+    "p50_ms": 29.538099999967926,
+    "p95_ms": 40.562465000095926,
+    "mean_ms": 30.629787199995917,
+    "n_params": 278089788,
+    "model_dir_mb": 1129.487328,
+    "torch": "2.14.1+cu126",
+    "torch_threads": 8,
+    "cpu": "Intel64 Family 6 Model 141 Stepping 1, GenuineIntel",
+    "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU"
+  },
+  {
+    "run": "xlmr-base-e10",
+    "device": "cuda",
+    "n_timed": 250,
+    "warmup": 20,
+    "p50_ms": 6.819450000079996,
+    "p95_ms": 7.6696400000287195,
+    "mean_ms": 6.990103999995881,
+    "n_params": 278089788,
+    "model_dir_mb": 1129.487328,
+    "torch": "2.14.1+cu126",
+    "torch_threads": 8,
+    "cpu": "Intel64 Family 6 Model 141 Stepping 1, GenuineIntel",
+    "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU"
+  }
+]

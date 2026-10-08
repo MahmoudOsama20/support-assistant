@@ -1,0 +1,185 @@
+{
+  "model": "allam-2-7b",
+  "prompt_version": "zero_shot_v1",
+  "temperature": 0.0,
+  "max_tokens": 24,
+  "sampling": {
+    "partition": "test",
+    "seed": 42,
+    "n_ids": 500
+  },
+  "n_scored": 1000,
+  "n_missing": 0,
+  "metrics": {
+    "overall": {
+      "n": 1000,
+      "accuracy": 0.563,
+      "macro_f1": 0.6185844377239207,
+      "strict_accuracy": 0.558,
+      "invalid_rate": 0.027,
+      "fuzzy_rate": 0.01,
+      "contained_rate": 0.0,
+      "ci95": {
+        "accuracy": [
+          0.532,
+          0.595
+        ],
+        "macro_f1": [
+          0.5759674320983135,
+          0.6474430333452644
+        ]
+      }
+    },
+    "ar-SA": {
+      "n": 500,
+      "accuracy": 0.516,
+      "macro_f1": 0.5763312650587408,
+      "strict_accuracy": 0.51,
+      "invalid_rate": 0.018,
+      "fuzzy_rate": 0.01,
+      "contained_rate": 0.0,
+      "ci95": {
+        "accuracy": [
+          0.47,
+          0.558
+        ],
+        "macro_f1": [
+          0.5214264706869987,
+          0.615474880085193
+        ]
+      }
+    },
+    "en-US": {
+      "n": 500,
+      "accuracy": 0.61,
+      "macro_f1": 0.6414234532921539,
+      "strict_accuracy": 0.606,
+      "invalid_rate": 0.036,
+      "fuzzy_rate": 0.01,
+      "contained_rate": 0.0,
+      "ci95": {
+        "accuracy": [
+          0.56995,
+          0.654
+        ],
+        "macro_f1": [
+          0.5990111484023991,
+          0.6970265363993704
+        ]
+      }
+    }
+  },
+  "parse_methods": {
+    "overall": {
+      "exact": 963,
+      "invalid": 27,
+      "fuzzy": 10
+    },
+    "ar-SA": {
+      "exact": 486,
+      "invalid": 9,
+      "fuzzy": 5
+    },
+    "en-US": {
+      "exact": 477,
+      "invalid": 18,
+      "fuzzy": 5
+    }
+  },
+  "latency_s": {
+    "overall": {
+      "n": 1000,
+      "p50": 0.3793618500003504,
+      "p95": 1.9018670999988894,
+      "mean": 0.5677522211000432
+    },
+    "ar-SA": {
+      "n": 500,
+      "p50": 0.3794182500005263,
+      "p95": 1.9062368599987882,
+      "mean": 0.5661288374000142
+    },
+    "en-US": {
+      "n": 500,
+      "p50": 0.3785754000000452,
+      "p95": 1.9018670999988894,
+      "mean": 0.5693756048000723
+    }
+  },
+  "tokens": {
+    "mean_prompt": 447.244,
+    "mean_completion": 5.929,
+    "total_prompt": 447244,
+    "total_completion": 5929,
+    "truncated_outputs": 0
+  },
+  "cost": {
+    "list_price_usd_per_request": null,
+    "price_per_1m_input_usd": null,
+    "price_per_1m_output_usd": null,
+    "price_date": null,
+    "note": "list-price equivalent; actual cost on the free tier is $0"
+  },
+  "retries": {
+    "calls_with_retries": 908,
+    "total_retries": 909,
+    "total_backoff_s": 3371.0
+  },
+  "top_confused_pairs": [
+    {
+      "true": "calendar_set",
+      "pred": "alarm_set",
+      "count": 37
+    },
+    {
+      "true": "play_music",
+      "pred": "music_query",
+      "count": 20
+    },
+    {
+      "true": "email_query",
+      "pred": "email_querycontact",
+      "count": 19
+    },
+    {
+      "true": "general_quirky",
+      "pred": "general_greet",
+      "count": 18
+    },
+    {
+      "true": "general_quirky",
+      "pred": "qa_factoid",
+      "count": 13
+    },
+    {
+      "true": "calendar_set",
+      "pred": "calendar_query",
+      "count": 13
+    },
+    {
+      "true": "cooking_recipe",
+      "pred": "cooking_query",
+      "count": 13
+    },
+    {
+      "true": "social_post",
+      "pred": "social_query",
+      "count": 8
+    },
+    {
+      "true": "qa_definition",
+      "pred": "qa_factoid",
+      "count": 7
+    },
+    {
+      "true": "qa_factoid",
+      "pred": "transport_query",
+      "count": 7
+    }
+  ],
+  "environment": {
+    "python": "3.12.7",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "timestamp_utc": "2026-10-08T11:39:24+00:00"
+  }
+}

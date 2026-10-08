@@ -29,6 +29,22 @@ def group_metrics(
     return out
 
 
+def compute_metrics_present(y_true: Sequence[int], y_pred: Sequence[int]) -> dict[str, float]:
+    """Accuracy and macro-F1 over the classes present in y_true.
+
+    For subsamples: predictions outside y_true's classes (including -1 for an
+    invalid LLM output) count as errors for the true class but never add a
+    phantom class to the macro average.
+    """
+    present = sorted({int(t) for t in y_true})
+    return {
+        "accuracy": float(accuracy_score(y_true, y_pred)),
+        "macro_f1": float(
+            f1_score(y_true, y_pred, labels=present, average="macro", zero_division=0)
+        ),
+    }
+
+
 def build_confusion(y_true: Sequence[int], y_pred: Sequence[int], num_labels: int) -> np.ndarray:
     return confusion_matrix(y_true, y_pred, labels=list(range(num_labels)))
 
@@ -75,6 +91,7 @@ def bootstrap_ci(
     n_boot: int = 1000,
     seed: int = 42,
     alpha: float = 0.05,
+    present_only: bool = False,
 ) -> dict[str, list[float]]:
     """Percentile bootstrap CIs for accuracy and macro-F1."""
     yt, yp = np.asarray(y_true), np.asarray(y_pred)
@@ -83,7 +100,11 @@ def bootstrap_ci(
     for _ in range(n_boot):
         idx = rng.integers(0, len(yt), len(yt))
         accs.append(float(np.mean(yt[idx] == yp[idx])))
-        f1s.append(float(f1_score(yt[idx], yp[idx], average="macro", zero_division=0)))
+        if present_only:
+            f1s.append(float(f1_score(yt[idx], yp[idx], labels=np.unique(yt[idx]),
+                                      average="macro", zero_division=0)))
+        else:
+            f1s.append(float(f1_score(yt[idx], yp[idx], average="macro", zero_division=0)))
     lo, hi = 100 * alpha / 2, 100 * (1 - alpha / 2)
     return {
         "accuracy": [float(np.percentile(accs, lo)), float(np.percentile(accs, hi))],

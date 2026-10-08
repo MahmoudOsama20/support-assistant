@@ -1,0 +1,21 @@
+provider: groq
+base_url: https://api.groq.com/openai/v1
+model: allam-2-7b     # VERIFY with: python src/classifier/llm_baseline.py --list-models
+
+temperature: 0.0
+max_tokens: 24
+
+partition: test        # use --partition dev for smoke tests and any prompt iteration
+n_per_locale: 500      # N ids -> 2N calls (both locales); nested, so --n 50 is a prefix of --n 500
+sample_seed: 42
+
+interval_s: 2.5        # minimum seconds between calls; raise it if you see many 429s
+timeout_s: 60
+max_retries: 6
+
+# Fill from the provider's pricing page and write the date. Leave null if unknown.
+price_per_1m_input_usd: null
+price_per_1m_output_usd: null
+price_date: null
+
+output_dir: results/llm_baseline

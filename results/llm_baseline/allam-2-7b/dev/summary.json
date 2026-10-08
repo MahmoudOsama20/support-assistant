@@ -1,0 +1,182 @@
+{
+  "model": "allam-2-7b",
+  "prompt_version": "zero_shot_v1",
+  "temperature": 0.0,
+  "max_tokens": 24,
+  "sampling": {
+    "partition": "dev",
+    "seed": 42,
+    "n_ids": 50
+  },
+  "n_scored": 100,
+  "n_missing": 0,
+  "metrics": {
+    "overall": {
+      "n": 100,
+      "accuracy": 0.53,
+      "macro_f1": 0.5657098408732396,
+      "strict_accuracy": 0.53,
+      "invalid_rate": 0.05,
+      "fuzzy_rate": 0.0,
+      "contained_rate": 0.0,
+      "ci95": {
+        "accuracy": [
+          0.43,
+          0.63
+        ],
+        "macro_f1": [
+          0.46058726846955406,
+          0.6398725030088525
+        ]
+      }
+    },
+    "ar-SA": {
+      "n": 50,
+      "accuracy": 0.5,
+      "macro_f1": 0.5138741916519695,
+      "strict_accuracy": 0.5,
+      "invalid_rate": 0.02,
+      "fuzzy_rate": 0.0,
+      "contained_rate": 0.0,
+      "ci95": {
+        "accuracy": [
+          0.36,
+          0.64
+        ],
+        "macro_f1": [
+          0.3857939355965671,
+          0.6259195906432748
+        ]
+      }
+    },
+    "en-US": {
+      "n": 50,
+      "accuracy": 0.56,
+      "macro_f1": 0.582716049382716,
+      "strict_accuracy": 0.56,
+      "invalid_rate": 0.08,
+      "fuzzy_rate": 0.0,
+      "contained_rate": 0.0,
+      "ci95": {
+        "accuracy": [
+          0.42,
+          0.7
+        ],
+        "macro_f1": [
+          0.4412225006961849,
+          0.7012728512457614
+        ]
+      }
+    }
+  },
+  "parse_methods": {
+    "overall": {
+      "exact": 95,
+      "invalid": 5
+    },
+    "ar-SA": {
+      "exact": 49,
+      "invalid": 1
+    },
+    "en-US": {
+      "exact": 46,
+      "invalid": 4
+    }
+  },
+  "latency_s": {
+    "overall": {
+      "n": 100,
+      "p50": 0.39881419999983336,
+      "p95": 0.9316835950014133,
+      "mean": 0.5460416970000006
+    },
+    "ar-SA": {
+      "n": 50,
+      "p50": 0.40103089999956865,
+      "p95": 0.9570088799998293,
+      "mean": 0.5118262519998461
+    },
+    "en-US": {
+      "n": 50,
+      "p50": 0.39634974999989936,
+      "p95": 0.8808823700011996,
+      "mean": 0.580257142000155
+    }
+  },
+  "tokens": {
+    "mean_prompt": 446.71,
+    "mean_completion": 5.93,
+    "total_prompt": 44671,
+    "total_completion": 593,
+    "truncated_outputs": 0
+  },
+  "cost": {
+    "list_price_usd_per_request": null,
+    "price_per_1m_input_usd": null,
+    "price_per_1m_output_usd": null,
+    "price_date": null,
+    "note": "list-price equivalent; actual cost on the free tier is $0"
+  },
+  "retries": {
+    "calls_with_retries": 71,
+    "total_retries": 71,
+    "total_backoff_s": 261.0
+  },
+  "top_confused_pairs": [
+    {
+      "true": "play_music",
+      "pred": "music_query",
+      "count": 6
+    },
+    {
+      "true": "email_query",
+      "pred": "email_querycontact",
+      "count": 4
+    },
+    {
+      "true": "takeaway_order",
+      "pred": "transport_query",
+      "count": 3
+    },
+    {
+      "true": "email_sendemail",
+      "pred": "social_post",
+      "count": 2
+    },
+    {
+      "true": "calendar_set",
+      "pred": "alarm_set",
+      "count": 2
+    },
+    {
+      "true": "general_quirky",
+      "pred": "general_greet",
+      "count": 2
+    },
+    {
+      "true": "email_sendemail",
+      "pred": "email_querycontact",
+      "count": 2
+    },
+    {
+      "true": "social_post",
+      "pred": "qa_factoid",
+      "count": 2
+    },
+    {
+      "true": "recommendation_locations",
+      "pred": "transport_query",
+      "count": 2
+    },
+    {
+      "true": "music_likeness",
+      "pred": "music_query",
+      "count": 2
+    }
+  ],
+  "environment": {
+    "python": "3.12.7",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "timestamp_utc": "2026-10-08T10:21:11+00:00"
+  }
+}
