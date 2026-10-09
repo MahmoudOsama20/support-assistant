@@ -1,0 +1,106 @@
+{
+  "seed": 42,
+  "caps": {
+    "train": 200,
+    "dev": 40,
+    "heldout": 40
+  },
+  "labels": [
+    "kb_question",
+    "data_lookup",
+    "out_of_scope",
+    "unsafe_request"
+  ],
+  "counts": {
+    "train": {
+      "ar": {
+        "kb_question": 200,
+        "data_lookup": 200,
+        "unsafe_request": 200,
+        "out_of_scope": 200
+      },
+      "en": {
+        "kb_question": 200,
+        "data_lookup": 200,
+        "unsafe_request": 200,
+        "out_of_scope": 200
+      }
+    },
+    "dev": {
+      "ar": {
+        "kb_question": 40,
+        "data_lookup": 40,
+        "unsafe_request": 40,
+        "out_of_scope": 40
+      },
+      "en": {
+        "kb_question": 40,
+        "data_lookup": 40,
+        "unsafe_request": 40,
+        "out_of_scope": 40
+      }
+    },
+    "heldout": {
+      "ar": {
+        "kb_question": 40,
+        "data_lookup": 40,
+        "unsafe_request": 40,
+        "out_of_scope": 40
+      },
+      "en": {
+        "kb_question": 40,
+        "data_lookup": 40,
+        "unsafe_request": 40,
+        "out_of_scope": 40
+      }
+    }
+  },
+  "frames": {
+    "kb_question/ar": {
+      "train": 13,
+      "dev": 4,
+      "heldout": 4
+    },
+    "data_lookup/ar": {
+      "train": 10,
+      "dev": 4,
+      "heldout": 4
+    },
+    "unsafe_request/ar": {
+      "train": 11,
+      "dev": 3,
+      "heldout": 3
+    },
+    "kb_question/en": {
+      "train": 13,
+      "dev": 4,
+      "heldout": 4
+    },
+    "data_lookup/en": {
+      "train": 10,
+      "dev": 4,
+      "heldout": 4
+    },
+    "unsafe_request/en": {
+      "train": 11,
+      "dev": 3,
+      "heldout": 3
+    }
+  },
+  "massive_dropped_support_like": {
+    "ar": {
+      "train": 132,
+      "dev": 24
+    },
+    "en": {
+      "train": 183,
+      "dev": 33
+    }
+  },
+  "shortfalls": [],
+  "sha256": {
+    "route_train.jsonl": "fa182255c4d283a5ea2205551538fea860bf3909ddf978e0d18bd5f407227dcd",
+    "route_dev.jsonl": "67e5c3ff84e631c4778978d1d433467f36439f1de21d865e01058b9417a140bf",
+    "route_heldout.jsonl": "142b7151205770ef8b64844c09f7099e521ef36689b2a86decc332a78558dcae"
+  }
+}
