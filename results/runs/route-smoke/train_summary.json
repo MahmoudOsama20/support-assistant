@@ -1,0 +1,10 @@
+{
+  "run_name": "route-smoke",
+  "init": "E:\\support-assistant\\results\\runs\\e5-small-e15\\model",
+  "best_epoch": 1,
+  "best_dev_macro_f1": 0.8930553449453114,
+  "temperature": 0.41238696761831,
+  "train_seconds": 76.8,
+  "device": "cpu",
+  "gpu": null
+}

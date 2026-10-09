@@ -1,0 +1,14 @@
+model_name: results/runs/e5-small-e15/model   # init from the Part A fine-tuned weights (UNVERIFIED benefit vs base)
+run_name: route-e5small
+output_dir: results/runs
+data_dir: data/route
+max_length: 64
+batch_size: 32
+eval_batch_size: 128
+learning_rate: 5.0e-5
+weight_decay: 0.01
+warmup_ratio: 0.1
+epochs: 8
+patience: 3
+seed: 42
+fp16: true
