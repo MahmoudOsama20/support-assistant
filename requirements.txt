@@ -6,4 +6,5 @@ torch>=2.3
 transformers>=4.40
 tqdm>=4.66
 rank-bm25
-httpx
+httpx==0.28.1
+sqlglot==30.21.0

@@ -1,0 +1,844 @@
+{
+ "model": "openai/gpt-oss-20b",
+ "tau": 0.05,
+ "records": [
+  {
+   "id": "cal_01",
+   "category": "rag_en",
+   "gate_value": 0.9746286885255978,
+   "passed": true,
+   "dropped_superseded": [],
+   "outcome": {
+    "status": "answered",
+    "answer": "You have 60 days to file a dispute for a card payment.",
+    "citations": [
+     {
+      "doc_id": "kb_009",
+      "chunk_id": "kb_009#c1",
+      "title": "Disputes and Chargebacks",
+      "heading": "When you can file a dispute",
+      "status": "active",
+      "snippet": "You can file a dispute in the Nile Wallet app within 60 days of the transaction date."
+     }
+    ],
+    "refusal_reason": null,
+    "degraded": false,
+    "degraded_reason": null,
+    "gate_prob": 0.9746286885255978,
+    "context_ids": [
+     "kb_009#c1",
+     "kb_010#c1",
+     "kb_009#c3",
+     "kb_007#c4"
+    ],
+    "dropped_claims": [],
+    "llm": {
+     "cached": false,
+     "prompt_tokens": 699,
+     "completion_tokens": 75,
+     "latency_ms": 2721.1,
+     "retries": 0
+    }
+   }
+  },
+  {
+   "id": "cal_02",
+   "category": "rag_en",
+   "gate_value": 0.18097353011202233,
+   "passed": true,
+   "dropped_superseded": [],
+   "outcome": {
+    "status": "answered",
+    "answer": "You can re-verify your identity with a photo of your national ID and a selfie.",
+    "citations": [
+     {
+      "doc_id": "kb_013",
+      "chunk_id": "kb_013#c3",
+      "title": "Password and Two-Factor Recovery",
+      "heading": "Lost phone or changed number",
+      "status": "active",
+      "snippet": "If you have lost your phone or changed your mobile number and can no longer receive SMS codes, you can re-verify your identity with a photo of your national ID "
+     }
+    ],
+    "refusal_reason": null,
+    "degraded": false,
+    "degraded_reason": null,
+    "gate_prob": 0.18097353011202233,
+    "context_ids": [
+     "kb_013#c3",
+     "kb_014#c3",
+     "kb_013#c1",
+     "kb_013#c4"
+    ],
+    "dropped_claims": [],
+    "llm": {
+     "cached": false,
+     "prompt_tokens": 682,
+     "completion_tokens": 103,
+     "latency_ms": 621.5,
+     "retries": 0
+    }
+   }
+  },
+  {
+   "id": "cal_03",
+   "category": "rag_en",
+   "gate_value": 0.9876638995791303,
+   "passed": true,
+   "dropped_superseded": [],
+   "outcome": {
+    "status": "answered",
+    "answer": "The daily sending limit for a Plus account is 30,000 EGP.",
+    "citations": [
+     {
+      "doc_id": "kb_003",
+      "chunk_id": "kb_003#c1",
+      "title": "Transfer Limits by Account Tier",
+      "heading": "Limits at a glance",
+      "status": "active",
+      "snippet": "Limits are set in Egyptian pounds (EGP) and depend on your verification tier."
+     }
+    ],
+    "refusal_reason": null,
+    "degraded": false,
+    "degraded_reason": null,
+    "gate_prob": 0.9876638995791303,
+    "context_ids": [
+     "kb_003#c1",
+     "kb_004#c1",
+     "kb_017#c1",
+     "kb_027#c2"
+    ],
+    "dropped_claims": [],
+    "llm": {
+     "cached": false,
+     "prompt_tokens": 807,
+     "completion_tokens": 76,
+     "latency_ms": 536.9,
+     "retries": 0
+    }
+   }
+  },
+  {
+   "id": "cal_04",
+   "category": "rag_en",
+   "gate_value": 0.9964481154509656,
+   "passed": true,
+   "dropped_superseded": [],
+   "outcome": {
+    "status": "answered",
+    "answer": "A failed transfer is reversed automatically within 24 hours.",
+    "citations": [
+     {
+      "doc_id": "kb_011",
+      "chunk_id": "kb_011#c2",
+      "title": "Refund Timelines",
+      "heading": "Failed transfers",
+      "status": "active",
+      "snippet": "If a transfer fails, the money is reversed automatically within 24 hours."
+     }
+    ],
+    "refusal_reason": null,
+    "degraded": false,
+    "degraded_reason": null,
+    "gate_prob": 0.9964481154509656,
+    "context_ids": [
+     "kb_011#c2",
+     "kb_012#c2",
+     "kb_011#c1",
+     "kb_029#c2"
+    ],
+    "dropped_claims": [],
+    "llm": {
+     "cached": false,
+     "prompt_tokens": 645,
+     "completion_tokens": 70,
+     "latency_ms": 364.3,
+     "retries": 0
+    }
+   }
+  },
+  {
+   "id": "cal_05",
+   "category": "rag_en",
+   "gate_value": 0.20801799791839662,
+   "passed": true,
+   "dropped_superseded": [],
+   "outcome": {
+    "status": "answered",
+    "answer": "To upgrade to a Premium account you must provide a photo of the front and back of your national ID, a selfie, a proof of address (a utility bill no older than 3 months), and a source‑of‑income declaration.",
+    "citations": [
+     {
+      "doc_id": "kb_001",
+      "chunk_id": "kb_001#c2",
+      "title": "Account Opening and Identity Verification",
+      "heading": "Verification levels",
+      "status": "active",
+      "snippet": "Nile Wallet has three account tiers, and each one needs more proof of identity than the last. Basic: enter your mobile number and national ID number."
+     }
+    ],
+    "refusal_reason": null,
+    "degraded": false,
+    "degraded_reason": null,
+    "gate_prob": 0.20801799791839662,
+    "context_ids": [
+     "kb_001#c2",
+     "kb_017#c1",
+     "kb_002#c2",
+     "kb_030#c1"
+    ],
+    "dropped_claims": [],
+    "llm": {
+     "cached": false,
+     "prompt_tokens": 807,
+     "completion_tokens": 132,
+     "latency_ms": 580.0,
+     "retries": 0
+    }
+   }
+  },
+  {
+   "id": "cal_06",
+   "category": "rag_en",
+   "gate_value": 0.9945094367975008,
+   "passed": true,
+   "dropped_superseded": [],
+   "outcome": {
+    "status": "answered",
+    "answer": "The first response time for a P2 support case is within 1 hour.",
+    "citations": [
+     {
+      "doc_id": "kb_021",
+      "chunk_id": "kb_021#c1",
+      "title": "Support Priorities and Response Times",
+      "heading": "Priority levels",
+      "status": "active",
+      "snippet": "Every support request is given a priority from P1 to P4. The priority decides how quickly we make a first response and the target time for resolving the case."
+     }
+    ],
+    "refusal_reason": null,
+    "degraded": false,
+    "degraded_reason": null,
+    "gate_prob": 0.9945094367975008,
+    "context_ids": [
+     "kb_021#c1",
+     "kb_022#c1",
+     "kb_021#c3",
+     "kb_022#c3"
+    ],
+    "dropped_claims": [],
+    "llm": {
+     "cached": false,
+     "prompt_tokens": 906,
+     "completion_tokens": 72,
+     "latency_ms": 902.8,
+     "retries": 0
+    }
+   }
+  },
+  {
+   "id": "cal_07",
+   "category": "rag_ar",
+   "gate_value": 0.976129165047569,
+   "passed": true,
+   "dropped_superseded": [
+    "kb_031#c3"
+   ],
+   "outcome": {
+    "status": "answered",
+    "answer": "رسوم السحب النقدي من ماكينة الصراف الآلي هي 5 جنيهات.",
+    "citations": [
+     {
+      "doc_id": "kb_006",
+      "chunk_id": "kb_006#c2",
+      "title": "جدول الرسوم لعام 2026",
+      "heading": "الرسوم اليومية",
+      "status": "active",
+      "snippet": "التحويل بين المحافظ: مجاني. التحويل البنكي الفوري: 0.5% من المبلغ بحد أدنى 3 جنيهات وحد أقصى 15 جنيهًا. السحب النقدي من ماكينة الصراف الآلي: 5 جنيهات."
+     }
+    ],
+    "refusal_reason": null,
+    "degraded": false,
+    "degraded_reason": null,
+    "gate_prob": 0.976129165047569,
+    "context_ids": [
+     "kb_006#c2",
+     "kb_005#c2",
+     "kb_025#c2",
+     "kb_018#c2"
+    ],
+    "dropped_claims": [],
+    "llm": {
+     "cached": false,
+     "prompt_tokens": 790,
+     "completion_tokens": 81,
+     "latency_ms": 583.9,
+     "retries": 0
+    }
+   }
+  },
+  {
+   "id": "cal_08",
+   "category": "rag_ar",
+   "gate_value": 0.9740919790859391,
+   "passed": true,
+   "dropped_superseded": [],
+   "outcome": {
+    "status": "answered",
+    "answer": "يمكنك إبلاغ عن فقدان البطاقة أو سرقتها من خلال التطبيق (البطاقات ثم الإبلاغ عن فقدان أو سرقة) أو الاتصال بالخط الساخن 19800 المتاح على مدار 24 ساعة.",
+    "citations": [
+     {
+      "doc_id": "kb_008",
+      "chunk_id": "kb_008#c2",
+      "title": "البطاقة المفقودة أو المسروقة أو المجمدة",
+      "heading": "الإبلاغ عن فقدان البطاقة أو سرقتها",
+      "status": "active",
+      "snippet": "إذا فُقدت البطاقة أو سُرقت فبلّغ من التطبيق (البطاقات ثم الإبلاغ عن فقدان أو سرقة) أو اتصل بالخط الساخن 19800 المتاح على مدار 24 ساعة."
+     }
+    ],
+    "refusal_reason": null,
+    "degraded": false,
+    "degraded_reason": null,
+    "gate_prob": 0.9740919790859391,
+    "context_ids": [
+     "kb_007#c2",
+     "kb_008#c2",
+     "kb_008#c4",
+     "kb_008#c1"
+    ],
+    "dropped_claims": [],
+    "llm": {
+     "cached": false,
+     "prompt_tokens": 719,
+     "completion_tokens": 142,
+     "latency_ms": 556.0,
+     "retries": 0
+    }
+   }
+  },
+  {
+   "id": "cal_09",
+   "category": "rag_ar",
+   "gate_value": 0.9268352785943768,
+   "passed": true,
+   "dropped_superseded": [],
+   "outcome": {
+    "status": "answered",
+    "answer": "يتم معالجة طلب الإغلاق خلال 7 أيام.",
+    "citations": [
+     {
+      "doc_id": "kb_016",
+      "chunk_id": "kb_016#c2",
+      "title": "إغلاق الحساب وحذف البيانات",
+      "heading": "ماذا يحدث بعد الطلب",
+      "status": "active",
+      "snippet": "تتم معالجة طلب الإغلاق خلال 7 أيام. ولا يمكن إعادة فتح الحساب بعد إغلاقه، لكن إذا رغبت في استخدام نايل واليت مرة أخرى فيمكنك فتح حساب جديد بنفس الرقم القومي."
+     }
+    ],
+    "refusal_reason": null,
+    "degraded": false,
+    "degraded_reason": null,
+    "gate_prob": 0.9268352785943768,
+    "context_ids": [
+     "kb_016#c2",
+     "kb_016#c4",
+     "kb_015#c4",
+     "kb_015#c2"
+    ],
+    "dropped_claims": [],
+    "llm": {
+     "cached": false,
+     "prompt_tokens": 621,
+     "completion_tokens": 64,
+     "latency_ms": 622.4,
+     "retries": 0
+    }
+   }
+  },
+  {
+   "id": "cal_10",
+   "category": "rag_ar",
+   "gate_value": 0.976535343307368,
+   "passed": true,
+   "dropped_superseded": [],
+   "outcome": {
+    "status": "answered",
+    "answer": "تصل أموال المبيعات إلى التاجر في يوم العمل الذي يلي يوم البيع قبل الساعة 6 مساءً.",
+    "citations": [
+     {
+      "doc_id": "kb_020",
+      "chunk_id": "kb_020#c3",
+      "title": "مدفوعات التجار ورمز الاستجابة السريعة",
+      "heading": "رسوم التاجر والتسوية",
+      "status": "active",
+      "snippet": "يدفع التاجر رسومًا قدرها 1.0% عن كل عملية."
+     }
+    ],
+    "refusal_reason": null,
+    "degraded": false,
+    "degraded_reason": null,
+    "gate_prob": 0.976535343307368,
+    "context_ids": [
+     "kb_020#c3",
+     "kb_020#c4",
+     "kb_012#c1",
+     "kb_019#c4"
+    ],
+    "dropped_claims": [],
+    "llm": {
+     "cached": false,
+     "prompt_tokens": 716,
+     "completion_tokens": 111,
+     "latency_ms": 774.5,
+     "retries": 0
+    }
+   }
+  },
+  {
+   "id": "cal_11",
+   "category": "rag_ar",
+   "gate_value": 0.9961155234512341,
+   "passed": true,
+   "dropped_superseded": [],
+   "outcome": {
+    "status": "answered",
+    "answer": "تضم شبكة دلتا باي 2,400 منفذ موزعة على 27 محافظة.",
+    "citations": [
+     {
+      "doc_id": "kb_025",
+      "chunk_id": "kb_025#c1",
+      "title": "الإيداع النقدي عبر منافذ دلتا باي",
+      "heading": "شبكة المنافذ",
+      "status": "active",
+      "snippet": "يمكنك إيداع النقود في محفظتك عن طريق شبكة الشركاء \"دلتا باي بوينتس\" (Delta Pay Points)، وتضم الشبكة 2,400 منفذ موزعة على 27 محافظة."
+     }
+    ],
+    "refusal_reason": null,
+    "degraded": false,
+    "degraded_reason": null,
+    "gate_prob": 0.9961155234512341,
+    "context_ids": [
+     "kb_025#c1",
+     "kb_025#c2",
+     "kb_025#c3",
+     "kb_025#c4"
+    ],
+    "dropped_claims": [],
+    "llm": {
+     "cached": false,
+     "prompt_tokens": 742,
+     "completion_tokens": 106,
+     "latency_ms": 511.6,
+     "retries": 0
+    }
+   }
+  },
+  {
+   "id": "cal_12",
+   "category": "rag_ar",
+   "gate_value": 0.8844391260585168,
+   "passed": true,
+   "dropped_superseded": [],
+   "outcome": {
+    "status": "answered",
+    "answer": "إذا لم تُحل المشكلة بعد مرور 15 يوم عمل على تقديم التذكرة، يمكنك تصعيد شكواك إلى وحدة الشكاوى في نايل واليت.",
+    "citations": [
+     {
+      "doc_id": "kb_026",
+      "chunk_id": "kb_026#c2",
+      "title": "كيفية تصعيد الشكاوى",
+      "heading": "الخطوة الثانية: وحدة الشكاوى في نايل واليت",
+      "status": "active",
+      "snippet": "إذا لم تُحل المشكلة بعد مرور 15 يوم عمل على تقديم التذكرة، فيمكنك تصعيد شكواك إلى وحدة الشكاوى في نايل واليت."
+     }
+    ],
+    "refusal_reason": null,
+    "degraded": false,
+    "degraded_reason": null,
+    "gate_prob": 0.8844391260585168,
+    "context_ids": [
+     "kb_026#c2",
+     "kb_026#c1",
+     "kb_026#c3",
+     "kb_022#c3"
+    ],
+    "dropped_claims": [],
+    "llm": {
+     "cached": false,
+     "prompt_tokens": 754,
+     "completion_tokens": 125,
+     "latency_ms": 635.9,
+     "retries": 0
+    }
+   }
+  },
+  {
+   "id": "cal_13",
+   "category": "xling",
+   "gate_value": 0.9246876936763765,
+   "passed": true,
+   "dropped_superseded": [
+    "kb_031#c3"
+   ],
+   "outcome": {
+    "status": "answered",
+    "answer": "Premium customers get a 50% discount on the monthly fee when they link their salary, so they pay 20 EGP per month.",
+    "citations": [
+     {
+      "doc_id": "kb_028",
+      "chunk_id": "kb_028#c3",
+      "title": "ربط الراتب بالمحفظة",
+      "heading": "المزايا",
+      "status": "active",
+      "snippet": "عند ربط الراتب تحصل على المزايا التالية: حساب بلس: إعفاء كامل من الرسوم الشهرية. حساب بريميوم: خصم 50% على الرسوم الشهرية، أي أنك تدفع 20 جنيهًا شهريًا."
+     }
+    ],
+    "refusal_reason": null,
+    "degraded": false,
+    "degraded_reason": null,
+    "gate_prob": 0.9246876936763765,
+    "context_ids": [
+     "kb_028#c3",
+     "kb_005#c3",
+     "kb_028#c1",
+     "kb_006#c3"
+    ],
+    "dropped_claims": [],
+    "llm": {
+     "cached": false,
+     "prompt_tokens": 682,
+     "completion_tokens": 111,
+     "latency_ms": 584.5,
+     "retries": 0
+    }
+   }
+  },
+  {
+   "id": "cal_14",
+   "category": "xling",
+   "gate_value": 0.9586926962069957,
+   "passed": true,
+   "dropped_superseded": [],
+   "outcome": {
+    "status": "answered",
+    "answer": "كل مفتاح واجهة برمجة محدود بـ 100 طلب في الدقيقة.",
+    "citations": [
+     {
+      "doc_id": "kb_029",
+      "chunk_id": "kb_029#c1",
+      "title": "API Limits and Webhooks",
+      "heading": "Rate limits",
+      "status": "active",
+      "snippet": "Each API key is limited to 100 requests per minute."
+     }
+    ],
+    "refusal_reason": null,
+    "degraded": false,
+    "degraded_reason": null,
+    "gate_prob": 0.9586926962069957,
+    "context_ids": [
+     "kb_029#c1",
+     "kb_029#c4",
+     "kb_022#c1",
+     "kb_021#c1"
+    ],
+    "dropped_claims": [],
+    "llm": {
+     "cached": false,
+     "prompt_tokens": 897,
+     "completion_tokens": 72,
+     "latency_ms": 395.0,
+     "retries": 0
+    }
+   }
+  },
+  {
+   "id": "cal_15",
+   "category": "conflict",
+   "gate_value": 0.9684409808294261,
+   "passed": true,
+   "dropped_superseded": [
+    "kb_031#c2",
+    "kb_031#c3"
+   ],
+   "outcome": {
+    "status": "answered",
+    "answer": "The fee for an instant bank transfer is 0.5% of the amount, with a minimum of 3 EGP and a maximum of 15 EGP.",
+    "citations": [
+     {
+      "doc_id": "kb_005",
+      "chunk_id": "kb_005#c2",
+      "title": "Fee Schedule 2026",
+      "heading": "Everyday fees",
+      "status": "active",
+      "snippet": "Wallet-to-wallet transfer: free. Instant bank transfer: 0.5% of the amount, with a minimum of 3 EGP and a maximum of 15 EGP. ATM cash withdrawal: 5 EGP."
+     }
+    ],
+    "refusal_reason": null,
+    "degraded": false,
+    "degraded_reason": null,
+    "gate_prob": 0.9684409808294261,
+    "context_ids": [
+     "kb_005#c2",
+     "kb_006#c2",
+     "kb_017#c2",
+     "kb_018#c2"
+    ],
+    "dropped_claims": [],
+    "llm": {
+     "cached": false,
+     "prompt_tokens": 794,
+     "completion_tokens": 120,
+     "latency_ms": 2538.8,
+     "retries": 0
+    }
+   }
+  },
+  {
+   "id": "cal_16",
+   "category": "conflict",
+   "gate_value": 0.9727790975901733,
+   "passed": true,
+   "dropped_superseded": [
+    "kb_031#c2",
+    "kb_031#c3"
+   ],
+   "outcome": {
+    "status": "answered",
+    "answer": "Issuing a physical card costs 75 EGP.",
+    "citations": [
+     {
+      "doc_id": "kb_005",
+      "chunk_id": "kb_005#c4",
+      "title": "Fee Schedule 2026",
+      "heading": "Cards",
+      "status": "active",
+      "snippet": "A virtual card is free. Issuing a physical card costs 75 EGP, and replacing a lost or damaged physical card costs 100 EGP."
+     }
+    ],
+    "refusal_reason": null,
+    "degraded": false,
+    "degraded_reason": null,
+    "gate_prob": 0.9727790975901733,
+    "context_ids": [
+     "kb_005#c4",
+     "kb_007#c3",
+     "kb_006#c4",
+     "kb_008#c3"
+    ],
+    "dropped_claims": [],
+    "llm": {
+     "cached": false,
+     "prompt_tokens": 578,
+     "completion_tokens": 89,
+     "latency_ms": 498.2,
+     "retries": 0
+    }
+   }
+  },
+  {
+   "id": "cal_17",
+   "category": "unanswerable",
+   "gate_value": 0.014503579691381979,
+   "passed": false,
+   "dropped_superseded": [],
+   "outcome": {
+    "status": "refused",
+    "answer": null,
+    "citations": [],
+    "refusal_reason": "no_evidence",
+    "degraded": false,
+    "degraded_reason": null,
+    "gate_prob": 0.014503579691381979,
+    "context_ids": [
+     "kb_032#c2",
+     "kb_009#c3",
+     "kb_023#c2",
+     "kb_023#c1"
+    ],
+    "dropped_claims": [],
+    "llm": null
+   }
+  },
+  {
+   "id": "cal_18",
+   "category": "unanswerable",
+   "gate_value": 0.009090383313658499,
+   "passed": false,
+   "dropped_superseded": [],
+   "outcome": {
+    "status": "refused",
+    "answer": null,
+    "citations": [],
+    "refusal_reason": "no_evidence",
+    "degraded": false,
+    "degraded_reason": null,
+    "gate_prob": 0.009090383313658499,
+    "context_ids": [
+     "kb_030#c3",
+     "kb_005#c2",
+     "kb_006#c5",
+     "kb_006#c2"
+    ],
+    "dropped_claims": [],
+    "llm": null
+   }
+  },
+  {
+   "id": "cal_19",
+   "category": "unanswerable",
+   "gate_value": 0.003247676499188751,
+   "passed": false,
+   "dropped_superseded": [],
+   "outcome": {
+    "status": "refused",
+    "answer": null,
+    "citations": [],
+    "refusal_reason": "no_evidence",
+    "degraded": false,
+    "degraded_reason": null,
+    "gate_prob": 0.003247676499188751,
+    "context_ids": [
+     "kb_019#c1",
+     "kb_020#c1",
+     "kb_001#c2",
+     "kb_025#c3"
+    ],
+    "dropped_claims": [],
+    "llm": null
+   }
+  },
+  {
+   "id": "cal_20",
+   "category": "unanswerable",
+   "gate_value": 0.8422153599018343,
+   "passed": true,
+   "dropped_superseded": [],
+   "outcome": {
+    "status": "refused",
+    "answer": null,
+    "citations": [],
+    "refusal_reason": "no_evidence",
+    "degraded": false,
+    "degraded_reason": null,
+    "gate_prob": 0.8422153599018343,
+    "context_ids": [
+     "kb_030#c3",
+     "kb_003#c1",
+     "kb_003#c2",
+     "kb_004#c1"
+    ],
+    "dropped_claims": [],
+    "llm": {
+     "cached": false,
+     "prompt_tokens": 760,
+     "completion_tokens": 55,
+     "latency_ms": 728.6,
+     "retries": 0
+    }
+   }
+  },
+  {
+   "id": "cal_21",
+   "category": "unanswerable",
+   "gate_value": 0.017110889211844046,
+   "passed": false,
+   "dropped_superseded": [],
+   "outcome": {
+    "status": "refused",
+    "answer": null,
+    "citations": [],
+    "refusal_reason": "no_evidence",
+    "degraded": false,
+    "degraded_reason": null,
+    "gate_prob": 0.017110889211844046,
+    "context_ids": [
+     "kb_025#c2",
+     "kb_024#c1",
+     "kb_001#c2",
+     "kb_010#c3"
+    ],
+    "dropped_claims": [],
+    "llm": null
+   }
+  },
+  {
+   "id": "cal_22",
+   "category": "unanswerable",
+   "gate_value": 0.0020829707830458,
+   "passed": false,
+   "dropped_superseded": [],
+   "outcome": {
+    "status": "refused",
+    "answer": null,
+    "citations": [],
+    "refusal_reason": "no_evidence",
+    "degraded": false,
+    "degraded_reason": null,
+    "gate_prob": 0.0020829707830458,
+    "context_ids": [
+     "kb_008#c2",
+     "kb_026#c1",
+     "kb_027#c3",
+     "kb_023#c4"
+    ],
+    "dropped_claims": [],
+    "llm": null
+   }
+  },
+  {
+   "id": "cal_23",
+   "category": "unanswerable",
+   "gate_value": 0.2760070054685327,
+   "passed": true,
+   "dropped_superseded": [],
+   "outcome": {
+    "status": "refused",
+    "answer": null,
+    "citations": [],
+    "refusal_reason": "no_evidence",
+    "degraded": false,
+    "degraded_reason": null,
+    "gate_prob": 0.2760070054685327,
+    "context_ids": [
+     "kb_004#c1",
+     "kb_004#c2",
+     "kb_030#c3",
+     "kb_003#c1"
+    ],
+    "dropped_claims": [],
+    "llm": {
+     "cached": false,
+     "prompt_tokens": 786,
+     "completion_tokens": 55,
+     "latency_ms": 1844.4,
+     "retries": 0
+    }
+   }
+  },
+  {
+   "id": "cal_24",
+   "category": "unanswerable",
+   "gate_value": 0.00016474656078881514,
+   "passed": false,
+   "dropped_superseded": [],
+   "outcome": {
+    "status": "refused",
+    "answer": null,
+    "citations": [],
+    "refusal_reason": "no_evidence",
+    "degraded": false,
+    "degraded_reason": null,
+    "gate_prob": 0.00016474656078881514,
+    "context_ids": [
+     "kb_024#c1",
+     "kb_009#c3",
+     "kb_030#c2",
+     "kb_010#c3"
+    ],
+    "dropped_claims": [],
+    "llm": null
+   }
+  }
+ ]
+}
