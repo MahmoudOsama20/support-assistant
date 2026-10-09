@@ -1,0 +1,24 @@
+{"id": "cal_01", "language": "en", "category": "rag_en", "query": "How many days do I have to file a dispute for a card payment?", "gold_doc_ids": ["kb_009", "kb_010"]}
+{"id": "cal_02", "language": "en", "category": "rag_en", "query": "I lost my phone, how can I get back into my account?", "gold_doc_ids": ["kb_013", "kb_014"]}
+{"id": "cal_03", "language": "en", "category": "rag_en", "query": "What is the daily send limit for a Plus account?", "gold_doc_ids": ["kb_003", "kb_004"]}
+{"id": "cal_04", "language": "en", "category": "rag_en", "query": "How long until a failed transfer is reversed?", "gold_doc_ids": ["kb_011", "kb_012"]}
+{"id": "cal_05", "language": "en", "category": "rag_en", "query": "Which documents do I need to upgrade to a Premium account?", "gold_doc_ids": ["kb_001", "kb_002"]}
+{"id": "cal_06", "language": "en", "category": "rag_en", "query": "What is the first response time for a P2 support case?", "gold_doc_ids": ["kb_021", "kb_022"]}
+{"id": "cal_07", "language": "ar", "category": "rag_ar", "query": "كم رسوم السحب النقدي من ماكينة الصراف الآلي؟", "gold_doc_ids": ["kb_005", "kb_006"]}
+{"id": "cal_08", "language": "ar", "category": "rag_ar", "query": "كيف أبلغ عن فقدان بطاقتي؟", "gold_doc_ids": ["kb_007", "kb_008"]}
+{"id": "cal_09", "language": "ar", "category": "rag_ar", "query": "كم يستغرق إغلاق الحساب بعد تقديم الطلب؟", "gold_doc_ids": ["kb_015", "kb_016"]}
+{"id": "cal_10", "language": "ar", "category": "rag_ar", "query": "متى تصل أموال المبيعات إلى التاجر؟", "gold_doc_ids": ["kb_019", "kb_020"]}
+{"id": "cal_11", "language": "ar", "category": "rag_ar", "query": "كم عدد منافذ دلتا باي وفي كم محافظة؟", "gold_doc_ids": ["kb_025"]}
+{"id": "cal_12", "language": "ar", "category": "rag_ar", "query": "ماذا أفعل إذا لم يتم حل شكواي بعد تقديم تذكرة الدعم؟", "gold_doc_ids": ["kb_026"]}
+{"id": "cal_13", "language": "en", "category": "xling", "query": "How much discount do Premium customers get on the monthly fee when they link their salary?", "gold_doc_ids": ["kb_028"]}
+{"id": "cal_14", "language": "ar", "category": "xling", "query": "كم عدد الطلبات المسموح بها في الدقيقة لكل مفتاح واجهة برمجة؟", "gold_doc_ids": ["kb_029"]}
+{"id": "cal_15", "language": "en", "category": "conflict", "query": "What is the fee for an instant bank transfer?", "gold_doc_ids": ["kb_005", "kb_006"]}
+{"id": "cal_16", "language": "en", "category": "conflict", "query": "How much does it cost to issue a physical card?", "gold_doc_ids": ["kb_005", "kb_006"]}
+{"id": "cal_17", "language": "en", "category": "unanswerable", "query": "Can I buy cryptocurrency with my Nile Wallet balance?", "gold_doc_ids": []}
+{"id": "cal_18", "language": "en", "category": "unanswerable", "query": "What interest rate do I earn on money kept in my wallet?", "gold_doc_ids": []}
+{"id": "cal_19", "language": "en", "category": "unanswerable", "query": "How do I pay my electricity bill through the app?", "gold_doc_ids": []}
+{"id": "cal_20", "language": "en", "category": "unanswerable", "query": "What is the monthly transaction limit for a business wallet?", "gold_doc_ids": []}
+{"id": "cal_21", "language": "ar", "category": "unanswerable", "query": "هل يقدم نايل واليت قروضًا شخصية؟", "gold_doc_ids": []}
+{"id": "cal_22", "language": "ar", "category": "unanswerable", "query": "كيف أحجز تذكرة طيران من خلال التطبيق؟", "gold_doc_ids": []}
+{"id": "cal_23", "language": "ar", "category": "unanswerable", "query": "ما هو الحد الشهري لمحفظة الأعمال؟", "gold_doc_ids": []}
+{"id": "cal_24", "language": "ar", "category": "unanswerable", "query": "من هو الرئيس التنفيذي لشركة نايل واليت؟", "gold_doc_ids": []}
