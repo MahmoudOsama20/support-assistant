@@ -15,7 +15,9 @@ __pycache__/
 !.env.example
 
 # Data
-data/
+data/*
+!data/kb/
+!data/massive/
 
 # Models / checkpoints
 *.pt
