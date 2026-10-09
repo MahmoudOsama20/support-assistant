@@ -39,3 +39,12 @@ def tokenize(text: str, *, light_stem: bool = True, fold_ta_marbuta: bool = True
     if light_stem:
         tokens = [_stem(t) if _ARABIC.search(t) else t for t in tokens]
     return tokens
+
+
+def detect_language(text: str) -> str:
+    """'ar' if more than half of the letters are Arabic-script, else 'en'."""
+    letters = [ch for ch in text if ch.isalpha()]
+    if not letters:
+        return "en"
+    arabic = sum("\u0600" <= ch <= "\u06ff" for ch in letters)
+    return "ar" if arabic / len(letters) > 0.5 else "en"

@@ -6,3 +6,4 @@ torch>=2.3
 transformers>=4.40
 tqdm>=4.66
 rank-bm25
+httpx
