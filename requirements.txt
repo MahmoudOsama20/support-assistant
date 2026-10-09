@@ -8,3 +8,4 @@ tqdm>=4.66
 rank-bm25
 httpx==0.28.1
 sqlglot==30.21.0
+python-dotenv

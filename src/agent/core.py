@@ -19,6 +19,7 @@ sys.path.insert(0, str(PROJECT_ROOT / "src"))
 from agent.messages import text_for  # noqa: E402
 from agent.policy import DEFAULT_TAU_ROUTE, decide  # noqa: E402
 from agent.preprocess import preprocess  # noqa: E402
+from agent.rules import is_too_short  # noqa: E402
 from agent.trace import Trace  # noqa: E402
 from llm.client import LLMError, LLMUnavailable  # noqa: E402
 from rag.guard import leaks_canary, looks_like_injection  # noqa: E402
@@ -103,6 +104,9 @@ class SupportAgent:
             return make(status="clarify", action="clarify", answer=text_for("clarify", lang))
 
         flags["injection_flagged"] = looks_like_injection(pre.text)
+        flags["too_short"] = is_too_short(pre.text)
+        if flags["too_short"]:
+            return make(status="clarify", action="clarify", answer=text_for("clarify", lang))
 
         try:
             with trace.span("models"):

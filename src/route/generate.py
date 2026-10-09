@@ -146,6 +146,38 @@ def pick_stratified(rows: list[dict], n: int, rng: random.Random) -> list[dict]:
     return out
 
 
+_BINS = ((1, 3), (4, 5), (6, 7), (8, 10), (11, 10**6))
+
+
+def _bin(n_words: int) -> int:
+    for i, (lo, hi) in enumerate(_BINS):
+        if lo <= n_words <= hi:
+            return i
+    return 0
+
+
+def pick_length_matched(rows: list[dict], n: int, target_words: list[int], rng: random.Random) -> list[dict]:
+    """Pick n rows whose word-count histogram (5 bins) matches `target_words`; intent-stratified inside a bin."""
+    if not target_words:
+        return pick_stratified(rows, n, rng)
+    share = Counter(_bin(w) for w in target_words)
+    total = sum(share.values())
+    raw = {b: n * c / total for b, c in share.items()}
+    quota = {b: int(v) for b, v in raw.items()}
+    for b in sorted(raw, key=lambda b: raw[b] - quota[b], reverse=True)[: n - sum(quota.values())]:
+        quota[b] += 1
+    by_bin: dict[int, list[dict]] = defaultdict(list)
+    for r in rows:
+        by_bin[_bin(len(r["utt"].split()))].append(r)
+    out: list[dict] = []
+    for b, q in sorted(quota.items()):
+        out.extend(pick_stratified(by_bin[b], q, rng))
+    if len(out) < n:  # a bin ran short: fill from the remaining rows
+        used = {id(r) for r in out}
+        out.extend(pick_stratified([r for r in rows if id(r) not in used], n - len(out), rng))
+    return out
+
+
 # ----------------------------------------------------------------------------- build / verify
 
 def build_dataset(massive_dir: Path, seed: int = 42, caps: Caps = Caps()) -> tuple[dict[str, list[dict]], dict]:
@@ -176,12 +208,19 @@ def build_dataset(massive_dir: Path, seed: int = 42, caps: Caps = Caps()) -> tup
         info["massive_dropped_support_like"][lang] = {"train": d1, "dev": d2}
         train_texts = {norm(r["utt"]) for r in train_rows}
         dev_rows = [r for r in dev_rows if norm(r["utt"]) not in train_texts]
-        picks = {"train": pick_stratified(train_rows, caps.train, random.Random(f"{seed}|oos|{lang}|train"))}
-        picks["heldout"] = pick_stratified(dev_rows, caps.heldout, random.Random(f"{seed}|oos|{lang}|heldout"))
+        def target(split: str) -> list[int]:
+            return [len(r["text"].split()) for r in out[split]
+                    if r["language"] == lang and r["source"] == "synthetic"]
+
+        picks = {"train": pick_length_matched(train_rows, caps.train, target("train"),random.Random(f"{seed}|oos|{lang}|train"))}
+        picks["heldout"] = pick_length_matched(dev_rows, caps.heldout, target("heldout"),random.Random(f"{seed}|oos|{lang}|heldout"))
         held = {norm(r["utt"]) for r in picks["heldout"]}
-        picks["dev"] = pick_stratified([r for r in dev_rows if norm(r["utt"]) not in held], caps.dev,
-                                       random.Random(f"{seed}|oos|{lang}|dev"))
+        picks["dev"] = pick_length_matched([r for r in dev_rows if norm(r["utt"]) not in held], caps.dev,target("dev"), random.Random(f"{seed}|oos|{lang}|dev"))
+        
         for split in SPLITS:
+            tw = sorted(target(split))
+            ow = sorted(len(r["utt"].split()) for r in picks[split])
+            info.setdefault("length_match", {})[f"{lang}/{split}"] = {"indomain_median_words": tw[len(tw) // 2] if tw else None,"oos_median_words": ow[len(ow) // 2] if ow else None}
             if len(picks[split]) < cap_of[split]:
                 info["shortfalls"].append(f"out_of_scope/{lang}/{split}: {len(picks[split])} < {cap_of[split]}")
             for r in picks[split]:
@@ -224,6 +263,14 @@ def check_calibration_overlap(out: dict[str, list[dict]], path: Path) -> None:
         raise ValueError(f"route data overlaps calibration queries: {hits[:5]}")
 
 
+def check_reality_overlap(out: dict[str, list[dict]], path: Path) -> None:
+    with path.open(encoding="utf-8") as f:
+        keys = {norm(json.loads(line)["text"]) for line in f if line.strip()}
+    hits = [r["text"] for s in SPLITS for r in out[s] if norm(r["text"]) in keys]
+    if hits:
+        raise ValueError(f"route data overlaps the reality-check set: {hits[:5]}")
+
+
 def write_outputs(out: dict[str, list[dict]], info: dict, out_dir: Path, seed: int, caps: Caps) -> dict:
     out_dir.mkdir(parents=True, exist_ok=True)
     files = {}
@@ -236,7 +283,7 @@ def write_outputs(out: dict[str, list[dict]], info: dict, out_dir: Path, seed: i
     counts = {s: {lang: dict(Counter(r["label"] for r in out[s] if r["language"] == lang)) for lang in LANGS}
               for s in SPLITS}
     manifest = {"seed": seed, "caps": asdict(caps), "labels": list(LABELS), "counts": counts,
-                "frames": info["frames"], "massive_dropped_support_like": info["massive_dropped_support_like"],
+                "frames": info["frames"], "length_match": info.get("length_match"), "massive_dropped_support_like": info["massive_dropped_support_like"],
                 "shortfalls": info["shortfalls"], "sha256": files}
     (out_dir / "MANIFEST.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")
     return manifest
@@ -248,6 +295,7 @@ def main() -> int:
     ap.add_argument("--out", type=Path, default=ROOT / "data" / "route")
     ap.add_argument("--massive-dir", type=Path, default=ROOT / "data" / "massive")
     ap.add_argument("--calibration", type=Path, default=ROOT / "data" / "kb" / "calibration_queries.jsonl")
+    ap.add_argument("--reality", type=Path, default=ROOT / "data" / "route" / "reality_check.jsonl")
     a = ap.parse_args()
 
     out, info = build_dataset(a.massive_dir, a.seed)
@@ -256,6 +304,10 @@ def main() -> int:
         check_calibration_overlap(out, a.calibration)
     else:
         print(f"WARNING: {a.calibration} not found, overlap check skipped")
+    if a.reality.is_file():
+        check_reality_overlap(out, a.reality)
+    else:
+        print(f"WARNING: {a.reality} not found, overlap check skipped")
     manifest = write_outputs(out, info, a.out, a.seed, Caps())
 
     for split in SPLITS:
