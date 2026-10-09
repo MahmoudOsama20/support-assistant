@@ -368,7 +368,7 @@
       "language": "en",
       "argmax": "out_of_scope",
       "conf": 0.9874,
-      "action": "refuse",
+      "action": "clarify",
       "expected_action": "clarify"
     },
     {
@@ -378,7 +378,7 @@
       "language": "en",
       "argmax": "out_of_scope",
       "conf": 0.988,
-      "action": "refuse",
+      "action": "clarify",
       "expected_action": "clarify"
     },
     {
@@ -388,7 +388,7 @@
       "language": "ar",
       "argmax": "out_of_scope",
       "conf": 0.988,
-      "action": "refuse",
+      "action": "clarify",
       "expected_action": "clarify"
     },
     {
@@ -398,7 +398,7 @@
       "language": "en",
       "argmax": "out_of_scope",
       "conf": 0.9878,
-      "action": "refuse",
+      "action": "clarify",
       "expected_action": "clarify"
     },
     {
@@ -426,44 +426,44 @@
     "ar/kb_question": {
       "n": 200,
       "median_words": 8,
-      "share_le_6_words": 0.175
+      "share_le_6_words": 0.185
     },
     "ar/data_lookup": {
       "n": 200,
-      "median_words": 8,
-      "share_le_6_words": 0.19
+      "median_words": 7,
+      "share_le_6_words": 0.46
     },
     "ar/out_of_scope": {
       "n": 200,
-      "median_words": 5,
-      "share_le_6_words": 0.705
+      "median_words": 8,
+      "share_le_6_words": 0.305
     },
     "ar/unsafe_request": {
       "n": 200,
       "median_words": 9,
-      "share_le_6_words": 0.1
+      "share_le_6_words": 0.125
     },
     "en/kb_question": {
       "n": 200,
-      "median_words": 9,
-      "share_le_6_words": 0.1
+      "median_words": 8,
+      "share_le_6_words": 0.25
     },
     "en/data_lookup": {
       "n": 200,
-      "median_words": 9,
-      "share_le_6_words": 0.155
+      "median_words": 7,
+      "share_le_6_words": 0.465
     },
     "en/out_of_scope": {
       "n": 200,
-      "median_words": 6,
-      "share_le_6_words": 0.57
+      "median_words": 8,
+      "share_le_6_words": 0.305
     },
     "en/unsafe_request": {
       "n": 200,
-      "median_words": 11,
-      "share_le_6_words": 0.075
+      "median_words": 10,
+      "share_le_6_words": 0.065
     },
-    "ar_oos_starting_kam": 5,
+    "ar_oos_starting_kam": 6,
     "ar_oos_total": 200
   }
 }

@@ -60,6 +60,7 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--tau", type=float, default=DEFAULT_TAU_ROUTE)
     ap.add_argument("--device", default="cpu")
+    ap.add_argument("--model-dir", type=Path, default=ROUTE_DIR)
     args = ap.parse_args()
 
     rows = load_jsonl(CHECK_PATH)

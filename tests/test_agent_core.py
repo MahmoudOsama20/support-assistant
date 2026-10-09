@@ -118,16 +118,22 @@ def test_rag_refusal_and_degraded_passthrough():
 def test_out_of_scope_and_unsafe_never_call_tools():
     for probs, reason in ((OOS_P, "out_of_scope"), (UNSAFE_P, "unsafe_request")):
         agent, _, rag, sql = make_agent(probs)
-        r = run(agent, "something")
+        r = run(agent, "something out of scope")
         assert (r.status, r.action, r.refusal_reason) == ("refused", "refuse", reason)
         assert not rag.calls and not sql.calls
 
 
 def test_low_confidence_clarifies_without_tools():
     agent, _, rag, sql = make_agent(LOW_P)
-    r = run(agent, "hmm")
+    r = run(agent, "hmm not sure")
     assert (r.status, r.action, r.route) == ("clarify", "clarify", "kb_question")
     assert not rag.calls and not sql.calls
+
+
+def test_too_short_query_skips_models():
+    agent, route, rag, sql = make_agent(RAG_P)
+    r = run(agent, "help")
+    assert r.status == "clarify" and r.flags["too_short"] is True and route.calls == 0 and not rag.calls
 
 
 def test_empty_query_skips_models():
