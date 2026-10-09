@@ -16,6 +16,7 @@ LABEL_TO_ACTION = {
 }
 REFUSAL_REASON = {"out_of_scope": "out_of_scope", "unsafe_request": "unsafe_request"}
 TOOL_ACTIONS = ("rag", "sql")
+DEFAULT_TAU_ROUTE = 0.95  # frozen from route DEV sweep (amended rule); never retune on heldout or eval cases
 
 
 @dataclass(frozen=True)
