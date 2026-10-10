@@ -9,3 +9,7 @@ rank-bm25
 httpx==0.28.1
 sqlglot==30.21.0
 python-dotenv
+pydantic==2.14.0
+fastapi==0.143.0
+starlette==1.7.0
+uvicorn==0.54.0
