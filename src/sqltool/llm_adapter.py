@@ -1,35 +1,16 @@
-"""The only file that touches src/llm/client.py.
+"""Adapter between the SQL tool's `complete(messages) -> str` and src/llm/client.py.
 
-Client API (verified): LLMClient(settings).complete(system, user) -> LLMReply; settings via LLMSettings.from_env().
-UNVERIFIED: the reply's text attribute is assumed to be `.text`; a wrong guess fails loudly below.
-Note: the client has no temperature argument here, so determinism comes from its on-disk cache.
+Client API (verified): LLMClient.complete(system, user) -> LLMReply(text, ...).
+The client has no temperature argument here; determinism comes from its on-disk cache.
 """
 from __future__ import annotations
 
-import dataclasses
 from typing import Awaitable, Callable
 
 from llm.client import LLMClient, LLMSettings
+from llm.env import ENV_FILE, load_dotenv_file  # noqa: F401  (re-exported for older imports)
 
-
-import os
-from pathlib import Path
-
-ENV_FILE = Path(__file__).resolve().parents[2] / ".env"
-
-
-def load_dotenv_file(path: Path = ENV_FILE) -> None:
-    """Minimal .env loader: KEY=VALUE lines; real environment variables take precedence."""
-    if not path.is_file():
-        return
-    for line in path.read_text(encoding="utf-8-sig").splitlines():
-        line = line.strip()
-        if not line or line.startswith("#") or "=" not in line:
-            continue
-        key, _, value = line.removeprefix("export ").partition("=")
-        value = value.strip().strip('"').strip("'")
-        if key.strip() and value:
-            os.environ.setdefault(key.strip(), value)
+Complete = Callable[[list[dict[str, str]]], Awaitable[str]]
 
 
 def _flatten(messages: list[dict[str, str]]) -> tuple[str, str]:
@@ -42,18 +23,21 @@ def _flatten(messages: list[dict[str, str]]) -> tuple[str, str]:
     return system, user
 
 
-def make_complete() -> Callable[[list[dict[str, str]]], Awaitable[str]]:
-    load_dotenv_file()
-    client = LLMClient(LLMSettings.from_env())
+def make_complete_from(client: LLMClient) -> Complete:
+    """Wrap a client someone else owns (no aclose: the owner closes it)."""
 
     async def complete(messages: list[dict[str, str]]) -> str:
         system, user = _flatten(messages)
         reply = await client.complete(system, user)
-        text = getattr(reply, "text", None)
-        if not isinstance(text, str):
-            fields = [f.name for f in dataclasses.fields(reply)] if dataclasses.is_dataclass(reply) else dir(reply)
-            raise AttributeError(f"LLMReply has no str .text; available: {fields}")
-        return text
+        return reply.text
 
+    return complete
+
+
+def make_complete() -> Complete:
+    """Standalone version for the SQL CLI: loads .env, owns its (uncached) client."""
+    load_dotenv_file()
+    client = LLMClient(LLMSettings.from_env())
+    complete = make_complete_from(client)
     complete.aclose = client.aclose  # type: ignore[attr-defined]
     return complete
