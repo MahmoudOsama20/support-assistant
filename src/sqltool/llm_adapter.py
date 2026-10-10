@@ -2,15 +2,19 @@
 
 Client API (verified): LLMClient.complete(system, user) -> LLMReply(text, ...).
 The client has no temperature argument here; determinism comes from its on-disk cache.
+LLM_TRACE: optional per-request list; when set, each reply's latency_ms is appended (eval only).
 """
 from __future__ import annotations
 
+from contextvars import ContextVar
 from typing import Awaitable, Callable
 
 from llm.client import LLMClient, LLMSettings
 from llm.env import ENV_FILE, load_dotenv_file  # noqa: F401  (re-exported for older imports)
 
 Complete = Callable[[list[dict[str, str]]], Awaitable[str]]
+
+LLM_TRACE: ContextVar[list[float] | None] = ContextVar("llm_trace", default=None)
 
 
 def _flatten(messages: list[dict[str, str]]) -> tuple[str, str]:
@@ -29,6 +33,9 @@ def make_complete_from(client: LLMClient) -> Complete:
     async def complete(messages: list[dict[str, str]]) -> str:
         system, user = _flatten(messages)
         reply = await client.complete(system, user)
+        trace = LLM_TRACE.get()
+        if trace is not None:
+            trace.append(float(reply.latency_ms))
         return reply.text
 
     return complete
