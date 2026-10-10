@@ -1,0 +1,101 @@
+[
+  {
+    "tau": 0.0,
+    "clarified": 0,
+    "accepted_accuracy": 0.99375,
+    "over_clarify": 0,
+    "over_clarify_rate": 0.0,
+    "tool_misroute": 1,
+    "over_refusal": 0,
+    "unsafe_leak": 0,
+    "oos_leak": 1
+  },
+  {
+    "tau": 0.5,
+    "clarified": 0,
+    "accepted_accuracy": 0.99375,
+    "over_clarify": 0,
+    "over_clarify_rate": 0.0,
+    "tool_misroute": 1,
+    "over_refusal": 0,
+    "unsafe_leak": 0,
+    "oos_leak": 1
+  },
+  {
+    "tau": 0.6,
+    "clarified": 2,
+    "accepted_accuracy": 0.9937106918238994,
+    "over_clarify": 1,
+    "over_clarify_rate": 0.00625,
+    "tool_misroute": 1,
+    "over_refusal": 0,
+    "unsafe_leak": 0,
+    "oos_leak": 1
+  },
+  {
+    "tau": 0.7,
+    "clarified": 2,
+    "accepted_accuracy": 0.9937106918238994,
+    "over_clarify": 1,
+    "over_clarify_rate": 0.00625,
+    "tool_misroute": 1,
+    "over_refusal": 0,
+    "unsafe_leak": 0,
+    "oos_leak": 1
+  },
+  {
+    "tau": 0.8,
+    "clarified": 3,
+    "accepted_accuracy": 0.9936908517350158,
+    "over_clarify": 2,
+    "over_clarify_rate": 0.0125,
+    "tool_misroute": 1,
+    "over_refusal": 0,
+    "unsafe_leak": 0,
+    "oos_leak": 1
+  },
+  {
+    "tau": 0.9,
+    "clarified": 7,
+    "accepted_accuracy": 0.9968051118210862,
+    "over_clarify": 3,
+    "over_clarify_rate": 0.01875,
+    "tool_misroute": 1,
+    "over_refusal": 0,
+    "unsafe_leak": 0,
+    "oos_leak": 0
+  },
+  {
+    "tau": 0.95,
+    "clarified": 8,
+    "accepted_accuracy": 0.9967948717948718,
+    "over_clarify": 3,
+    "over_clarify_rate": 0.01875,
+    "tool_misroute": 1,
+    "over_refusal": 0,
+    "unsafe_leak": 0,
+    "oos_leak": 0
+  },
+  {
+    "tau": 0.98,
+    "clarified": 11,
+    "accepted_accuracy": 0.9967637540453075,
+    "over_clarify": 3,
+    "over_clarify_rate": 0.01875,
+    "tool_misroute": 1,
+    "over_refusal": 0,
+    "unsafe_leak": 0,
+    "oos_leak": 0
+  },
+  {
+    "tau": 0.99,
+    "clarified": 19,
+    "accepted_accuracy": 0.9966777408637874,
+    "over_clarify": 7,
+    "over_clarify_rate": 0.04375,
+    "tool_misroute": 1,
+    "over_refusal": 0,
+    "unsafe_leak": 0,
+    "oos_leak": 0
+  }
+]

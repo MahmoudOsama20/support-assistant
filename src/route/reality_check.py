@@ -1,6 +1,6 @@
-"""Score the route model on the hand-written reality-check set (DEV use only).
+"""Score a route model on the hand-written reality-check set (DEV use only).
 
-Usage: python src/route/reality_check.py [--tau 0.95] [--device cpu]
+Usage: python src/route/reality_check.py [--model-dir DIR] [--tau 0.95] [--device cpu]
 """
 from __future__ import annotations
 
@@ -19,7 +19,7 @@ from agent.rules import is_too_short  # noqa: E402
 
 CHECK_PATH = PROJECT_ROOT / "data" / "route" / "reality_check.jsonl"
 TRAIN_PATH = PROJECT_ROOT / "data" / "route" / "route_train.jsonl"
-OUT_PATH = PROJECT_ROOT / "results" / "route" / "reality_check_v1.json"
+OUT_DIR = PROJECT_ROOT / "results" / "route"
 EXPECTED_ACTION = {
     "kb_question": "rag",
     "data_lookup": "sql",
@@ -27,6 +27,7 @@ EXPECTED_ACTION = {
     "unsafe_request": "refuse",
     "clarify": "clarify",
 }
+TAU_GRID = (0.5, 0.8, 0.9, 0.95, 0.98)
 
 
 def load_jsonl(path: Path) -> list[dict]:
@@ -36,8 +37,12 @@ def load_jsonl(path: Path) -> list[dict]:
         return [json.loads(line) for line in f if line.strip()]
 
 
+def action_for(text: str, probs: list[float], labels: list[str], tau: float) -> str:
+    """Pipeline order: the short-query rule runs before the model."""
+    return "clarify" if is_too_short(text) else decide(probs, labels, tau).action
+
+
 def train_length_diagnostic() -> dict:
-    """Evidence for the 'short Arabic question -> out_of_scope' hypothesis."""
     rows = load_jsonl(TRAIN_PATH)
     out: dict = {}
     for lang in ("ar", "en"):
@@ -50,41 +55,45 @@ def train_length_diagnostic() -> dict:
                 "median_words": words[len(words) // 2] if words else None,
                 "share_le_6_words": round(short / len(sel), 3) if sel else None,
             }
-    ar_oos = [r["text"] for r in rows if r["language"] == "ar" and r["label"] == "out_of_scope"]
-    out["ar_oos_starting_kam"] = sum(1 for t in ar_oos if t.startswith("كم"))
-    out["ar_oos_total"] = len(ar_oos)
     return out
 
 
 def main() -> None:
     ap = argparse.ArgumentParser()
+    ap.add_argument("--model-dir", type=Path, default=ROUTE_DIR)
     ap.add_argument("--tau", type=float, default=DEFAULT_TAU_ROUTE)
     ap.add_argument("--device", default="cpu")
-    ap.add_argument("--model-dir", type=Path, default=ROUTE_DIR)
     args = ap.parse_args()
 
+    run_name = args.model_dir.resolve().parent.name
+    out_path = OUT_DIR / f"reality_check_{run_name}.json"
+    print(f"model: {args.model_dir} (run {run_name}) | tau {args.tau}")
+
     rows = load_jsonl(CHECK_PATH)
-    model = RouteClassifier(ROUTE_DIR, args.device)
-    results = []
+    model = RouteClassifier(args.model_dir, args.device)
+    print(f"temperature: {model.temperature}")
+    labels = list(model.labels)
+
+    results, all_probs = [], []
     for r in rows:
         probs = model.predict(r["text"])
+        all_probs.append(probs)
         top = max(range(len(probs)), key=probs.__getitem__)
-        pred = model.labels[top]
-        d = decide(probs, model.labels, args.tau)
         results.append({
             **r,
-            "argmax": pred,
+            "argmax": labels[top],
             "conf": round(float(probs[top]), 4),
-            "action": "clarify" if is_too_short(r["text"]) else d.action,
+            "action": action_for(r["text"], probs, labels, args.tau),
             "expected_action": EXPECTED_ACTION[r["label"]],
         })
 
     scored = [x for x in results if x["label"] != "clarify"]
     argmax_ok = sum(x["argmax"] == x["label"] for x in scored)
     action_ok = sum(x["action"] == x["expected_action"] for x in results)
+    confident_wrong = [x for x in scored if x["argmax"] != x["label"] and x["conf"] >= 0.95]
     print(f"argmax acc (non-clarify): {argmax_ok}/{len(scored)}")
     print(f"policy action acc (all, tau={args.tau}): {action_ok}/{len(results)}")
-
+    print(f"confident wrong (argmax wrong, conf >= 0.95): {len(confident_wrong)}")
     for lang in ("ar", "en"):
         sub = [x for x in scored if x["language"] == lang]
         print(f"  {lang}: argmax {sum(x['argmax'] == x['label'] for x in sub)}/{len(sub)}")
@@ -100,18 +109,21 @@ def main() -> None:
             print(f"  {x['id']} [{x['language']}] {x['label']} -> {x['argmax']} "
                   f"({x['conf']}) action={x['action']} :: {x['text']}")
 
-    diag = train_length_diagnostic()
-    print("\ntrain diagnostic:")
-    for k, v in diag.items():
-        print(f"  {k}: {v}")
+    print("\npolicy acc by tau (diagnostic only, NOT used to pick tau):")
+    for t in TAU_GRID:
+        ok = sum(action_for(r["text"], p, labels, t) == EXPECTED_ACTION[r["label"]]
+                 for r, p in zip(rows, all_probs))
+        print(f"  tau={t}: {ok}/{len(rows)}")
 
-    OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
-    OUT_PATH.write_text(
-        json.dumps({"tau": args.tau, "results": results, "train_diagnostic": diag},
+    diag = train_length_diagnostic()
+    OUT_DIR.mkdir(parents=True, exist_ok=True)
+    out_path.write_text(
+        json.dumps({"model_dir": str(args.model_dir), "tau": args.tau,
+                    "results": results, "train_diagnostic": diag},
                    ensure_ascii=False, indent=2),
         encoding="utf-8",
     )
-    print(f"\nwrote {OUT_PATH}")
+    print(f"\nwrote {out_path}")
 
 
 if __name__ == "__main__":

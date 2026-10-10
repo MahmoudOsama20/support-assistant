@@ -1,0 +1,10 @@
+{
+  "run_name": "route-e5small-v2",
+  "init": "E:\\support-assistant\\results\\runs\\e5-small-e15\\model",
+  "best_epoch": 3,
+  "best_dev_macro_f1": 0.993749877924919,
+  "temperature": 0.6086484764524429,
+  "train_seconds": 40.0,
+  "device": "cuda",
+  "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU"
+}

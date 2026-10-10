@@ -1,0 +1,54 @@
+{
+  "n": 320,
+  "labels": [
+    "kb_question",
+    "data_lookup",
+    "out_of_scope",
+    "unsafe_request"
+  ],
+  "accuracy": 0.99375,
+  "macro_f1": 0.993749877924919,
+  "per_language": {
+    "ar": {
+      "n": 160,
+      "accuracy": 1.0,
+      "macro_f1": 1.0
+    },
+    "en": {
+      "n": 160,
+      "accuracy": 0.9875,
+      "macro_f1": 0.9874990232848883
+    }
+  },
+  "confusion_rows_true_cols_pred": [
+    [
+      79,
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      80,
+      0,
+      0
+    ],
+    [
+      1,
+      0,
+      79,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      80
+    ]
+  ],
+  "temperature": 0.6086484764524429,
+  "nll_raw": 0.07027618751538352,
+  "nll_scaled": 0.03899332802890384,
+  "ece_raw": 0.04647785684978535,
+  "ece_scaled": 0.00573420471512351
+}

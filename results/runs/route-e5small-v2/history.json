@@ -1,0 +1,116 @@
+[
+  {
+    "epoch": 1,
+    "train_loss": 1.0226696014404297,
+    "dev_loss": 0.5401485443115235,
+    "dev_accuracy": 0.890625,
+    "dev_macro_f1": 0.8888253137253619,
+    "dev_per_language": {
+      "ar": {
+        "n": 160,
+        "accuracy": 0.8875,
+        "macro_f1": 0.8847501845191623
+      },
+      "en": {
+        "n": 160,
+        "accuracy": 0.89375,
+        "macro_f1": 0.8931162333601358
+      }
+    }
+  },
+  {
+    "epoch": 2,
+    "train_loss": 0.2655796051025391,
+    "dev_loss": 0.16202640533447266,
+    "dev_accuracy": 0.965625,
+    "dev_macro_f1": 0.9657177517274551,
+    "dev_per_language": {
+      "ar": {
+        "n": 160,
+        "accuracy": 0.9625,
+        "macro_f1": 0.9628956300586978
+      },
+      "en": {
+        "n": 160,
+        "accuracy": 0.96875,
+        "macro_f1": 0.9686548019881353
+      }
+    }
+  },
+  {
+    "epoch": 3,
+    "train_loss": 0.08304998397827149,
+    "dev_loss": 0.07025794982910157,
+    "dev_accuracy": 0.99375,
+    "dev_macro_f1": 0.993749877924919,
+    "dev_per_language": {
+      "ar": {
+        "n": 160,
+        "accuracy": 1.0,
+        "macro_f1": 1.0
+      },
+      "en": {
+        "n": 160,
+        "accuracy": 0.9875,
+        "macro_f1": 0.9874990232848883
+      }
+    }
+  },
+  {
+    "epoch": 4,
+    "train_loss": 0.036999444961547855,
+    "dev_loss": 0.050296974182128903,
+    "dev_accuracy": 0.99375,
+    "dev_macro_f1": 0.993749877924919,
+    "dev_per_language": {
+      "ar": {
+        "n": 160,
+        "accuracy": 1.0,
+        "macro_f1": 1.0
+      },
+      "en": {
+        "n": 160,
+        "accuracy": 0.9875,
+        "macro_f1": 0.9874990232848883
+      }
+    }
+  },
+  {
+    "epoch": 5,
+    "train_loss": 0.02185457229614258,
+    "dev_loss": 0.043933749198913574,
+    "dev_accuracy": 0.990625,
+    "dev_macro_f1": 0.9906441657877261,
+    "dev_per_language": {
+      "ar": {
+        "n": 160,
+        "accuracy": 1.0,
+        "macro_f1": 1.0
+      },
+      "en": {
+        "n": 160,
+        "accuracy": 0.98125,
+        "macro_f1": 0.9813252070636036
+      }
+    }
+  },
+  {
+    "epoch": 6,
+    "train_loss": 0.01733841896057129,
+    "dev_loss": 0.04367265701293945,
+    "dev_accuracy": 0.990625,
+    "dev_macro_f1": 0.9906441657877261,
+    "dev_per_language": {
+      "ar": {
+        "n": 160,
+        "accuracy": 1.0,
+        "macro_f1": 1.0
+      },
+      "en": {
+        "n": 160,
+        "accuracy": 0.98125,
+        "macro_f1": 0.9813252070636036
+      }
+    }
+  }
+]
