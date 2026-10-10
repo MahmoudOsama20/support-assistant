@@ -25,11 +25,15 @@ python -m venv venv; .\venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 python src/supportdb/seed.py                 # data/db/support.db (deterministic)
 python src/kb/docs.py --expect-count 32      # validates the KB
+python scripts/hf_models.py fetch --repo-id MahmoudOsama20/nile-wallet-classifiers   # classifier weights, about 1 GB
+python scripts/download_massive.py           # MASSIVE (needed by the Part A tests)
 ```
+
+Verified on a fresh clone in this order: `pip install`, `seed.py`, `fetch`, `download_massive.py`, `pytest` gives 364 passed. The first service start also downloads bge-m3 and the reranker (several GB) and builds the dense index.
 
 Create `.env` at the repo root (gitignored) with `GROQ_API_KEY=...`. Optional: `LLM_MODEL` (default `openai/gpt-oss-120b`; the results use it), `LLM_MIN_INTERVAL_S` (pacing for free-tier limits).
 
-**Model weights are not in git.** The service needs `results/runs/e5-small-e15/model` (intent) and `results/runs/route-e5small/model` (route). Fetch them from the Hugging Face Hub (about 1 GB): `python scripts/hf_models.py fetch --repo-id HF_USER/nile-wallet-classifiers` (the author's upload; the same script's `upload` command recreates it from local weights). The route model was trained on the data at git tag `route-data-v1` (`generate.py` at HEAD produces the rejected v2 data).
+**Model weights are not in git.** The service needs `results/runs/e5-small-e15/model` (intent) and `results/runs/route-e5small/model` (route). Fetch them from the Hugging Face Hub (about 1 GB): `python scripts/hf_models.py fetch --repo-id MahmoudOsama20/nile-wallet-classifiers` (the author's upload; the same script's `upload` command recreates it from local weights). The route model was trained on the data at git tag `route-data-v1` (`generate.py` at HEAD produces the rejected v2 data).
 
 ## Run
 
@@ -58,7 +62,7 @@ CPU image. Models are not baked in. The DB and both classifiers are mounted read
 ## Tests and evaluation
 
 ```powershell
-python -m pytest -q                          # 359 passed on the author's machine
+python -m pytest -q                          # 364 passed (also on a fresh clone)
 python src/eval/build_cases.py               # refuses to overwrite: the 70-case file is the test set
 python src/eval/run_eval.py --name final-120b          # one scored run (spent; uses LLM quota)
 python src/eval/retrieval_arms.py            # retrieval arms and the reranker ablation (no LLM)
