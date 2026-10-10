@@ -29,7 +29,7 @@ python scripts/hf_models.py fetch --repo-id MahmoudOsama20/nile-wallet-classifie
 python scripts/download_massive.py           # MASSIVE (needed by the Part A tests)
 ```
 
-Verified on a fresh clone in this order: `pip install`, `seed.py`, `fetch`, `download_massive.py`, `pytest` gives 364 passed. The first service start also downloads bge-m3 and the reranker (several GB) and builds the dense index.
+Verified on a fresh clone in this order: `pip install`, `seed.py`, `fetch`, `download_massive.py`, `pytest` gives 364 passed. The first service start also downloads bge-m3 and the reranker (several GB) and builds the dense index. `download_massive.py` rewrites the timestamp in the tracked `data/massive/MANIFEST.json`; restore it with `git checkout data/massive/MANIFEST.json` if you do not want that change.
 
 Create `.env` at the repo root (gitignored) with `GROQ_API_KEY=...`. Optional: `LLM_MODEL` (default `openai/gpt-oss-120b`; the results use it), `LLM_MIN_INTERVAL_S` (pacing for free-tier limits).
 
