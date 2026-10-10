@@ -2,7 +2,7 @@
 
 AI Engineer take-home. A fine-tuned intent classifier (Part A) and an async service (Parts B-D) that routes each request to hybrid RAG with citations, a safe read-only SQL tool, a clarification or a refusal. Domain: **Nile Wallet**, a fictional Egyptian wallet company. The KB, database and routing data are synthetic.
 
-Results: `report/results.md` (Part A detail: `report/part_a_results.md`). Production note: `docs/production_note.md`.
+Results: `report/results_report.md` (Part A detail: `report/part_a_results.md`). Production note: `docs/production_note.md`.
 
 ## Architecture
 
@@ -29,7 +29,7 @@ python src/kb/docs.py --expect-count 32      # validates the KB
 
 Create `.env` at the repo root (gitignored) with `GROQ_API_KEY=...`. Optional: `LLM_MODEL` (default `openai/gpt-oss-120b`; the results use it), `LLM_MIN_INTERVAL_S` (pacing for free-tier limits).
 
-**Model weights are not in git.** The service needs `results/runs/e5-small-e15/model` (intent) and `results/runs/route-e5small/model` (route). Download: MODEL_WEIGHTS_LINK (TODO: fill in before submission). The route model was trained on the data at git tag `route-data-v1` (`generate.py` at HEAD produces the rejected v2 data).
+**Model weights are not in git.** The service needs `results/runs/e5-small-e15/model` (intent) and `results/runs/route-e5small/model` (route). Fetch them from the Hugging Face Hub (about 1 GB): `python scripts/hf_models.py fetch --repo-id HF_USER/nile-wallet-classifiers` (the author's upload; the same script's `upload` command recreates it from local weights). The route model was trained on the data at git tag `route-data-v1` (`generate.py` at HEAD produces the rejected v2 data).
 
 ## Run
 
