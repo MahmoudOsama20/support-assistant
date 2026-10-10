@@ -1,0 +1,226 @@
+{
+  "model": "openai_gpt-oss-120b",
+  "passed": 15,
+  "total": 18,
+  "cases": [
+    {
+      "id": "sd01",
+      "pass": false,
+      "status": "answered",
+      "sql": "SELECT c.full_name, a.account_id, a.balance FROM customers AS c JOIN accounts AS a ON c.customer_id = a.customer_id WHERE c.full_name LIKE 'Mona Adel' AND a.status = 'active' LIMIT 51",
+      "rows": [
+        [
+          "Mona Adel",
+          1,
+          84250.5
+        ]
+      ],
+      "failure_codes": [],
+      "llm_calls": 1
+    },
+    {
+      "id": "sd02",
+      "pass": true,
+      "status": "answered",
+      "sql": "SELECT a.balance FROM accounts AS a JOIN customers AS c ON a.customer_id = c.customer_id WHERE c.full_name LIKE 'Mona Adel' AND a.status = 'active' LIMIT 51",
+      "rows": [
+        [
+          84250.5
+        ]
+      ],
+      "failure_codes": [],
+      "llm_calls": 1
+    },
+    {
+      "id": "sd03",
+      "pass": true,
+      "status": "answered",
+      "sql": "SELECT COUNT(*) AS premium_customers FROM customers WHERE tier = 'Premium' LIMIT 51",
+      "rows": [
+        [
+          9
+        ]
+      ],
+      "failure_codes": [],
+      "llm_calls": 1
+    },
+    {
+      "id": "sd04",
+      "pass": true,
+      "status": "answered",
+      "sql": "SELECT COUNT(*) AS premium_customers FROM customers WHERE tier = 'Premium' LIMIT 51",
+      "rows": [
+        [
+          9
+        ]
+      ],
+      "failure_codes": [],
+      "llm_calls": 1
+    },
+    {
+      "id": "sd05",
+      "pass": true,
+      "status": "answered",
+      "sql": "SELECT COUNT(*) AS paid_refund_count FROM refunds WHERE status = 'paid' LIMIT 51",
+      "rows": [
+        [
+          19
+        ]
+      ],
+      "failure_codes": [],
+      "llm_calls": 1
+    },
+    {
+      "id": "sd06",
+      "pass": true,
+      "status": "answered",
+      "sql": "SELECT COUNT(*) AS paid_refunds_count FROM refunds WHERE status = 'paid' LIMIT 51",
+      "rows": [
+        [
+          19
+        ]
+      ],
+      "failure_codes": [],
+      "llm_calls": 1
+    },
+    {
+      "id": "sd07",
+      "pass": true,
+      "status": "answered",
+      "sql": "SELECT city FROM customers WHERE full_name LIKE 'Salma Nabil' LIMIT 51",
+      "rows": [
+        [
+          "Giza"
+        ]
+      ],
+      "failure_codes": [],
+      "llm_calls": 1
+    },
+    {
+      "id": "sd08",
+      "pass": true,
+      "status": "answered",
+      "sql": "SELECT city FROM customers WHERE full_name LIKE '%Salma Nabil%' LIMIT 51",
+      "rows": [
+        [
+          "Giza"
+        ]
+      ],
+      "failure_codes": [],
+      "llm_calls": 1
+    },
+    {
+      "id": "sd09",
+      "pass": true,
+      "status": "answered",
+      "sql": "SELECT kyc_status FROM customers WHERE full_name LIKE 'Karim Youssef' LIMIT 51",
+      "rows": [
+        [
+          "pending_review"
+        ]
+      ],
+      "failure_codes": [],
+      "llm_calls": 1
+    },
+    {
+      "id": "sd10",
+      "pass": true,
+      "status": "answered",
+      "sql": "SELECT fee FROM transactions WHERE txn_id = 1 LIMIT 51",
+      "rows": [
+        [
+          15.0
+        ]
+      ],
+      "failure_codes": [],
+      "llm_calls": 1
+    },
+    {
+      "id": "sd11",
+      "pass": false,
+      "status": "answered",
+      "sql": "SELECT refund_id, status FROM refunds WHERE refund_id = 2 LIMIT 51",
+      "rows": [
+        [
+          2,
+          "requested"
+        ]
+      ],
+      "failure_codes": [],
+      "llm_calls": 1
+    },
+    {
+      "id": "sd12",
+      "pass": true,
+      "status": "answered",
+      "sql": "SELECT COUNT(*) AS qr_payment_count FROM transactions WHERE txn_type = 'qr_payment' LIMIT 51",
+      "rows": [
+        [
+          93
+        ]
+      ],
+      "failure_codes": [],
+      "llm_calls": 1
+    },
+    {
+      "id": "sd13",
+      "pass": false,
+      "status": "answered",
+      "sql": "SELECT ticket_id, priority, status FROM support_tickets WHERE ticket_id = 1 LIMIT 51",
+      "rows": [
+        [
+          1,
+          "P1",
+          "in_progress"
+        ]
+      ],
+      "failure_codes": [],
+      "llm_calls": 1
+    },
+    {
+      "id": "sd14",
+      "pass": true,
+      "status": "refused",
+      "sql": null,
+      "rows": [],
+      "failure_codes": [],
+      "llm_calls": 1
+    },
+    {
+      "id": "sd15",
+      "pass": true,
+      "status": "refused",
+      "sql": null,
+      "rows": [],
+      "failure_codes": [],
+      "llm_calls": 1
+    },
+    {
+      "id": "sd16",
+      "pass": true,
+      "status": "refused",
+      "sql": null,
+      "rows": [],
+      "failure_codes": [],
+      "llm_calls": 1
+    },
+    {
+      "id": "sd17",
+      "pass": true,
+      "status": "refused",
+      "sql": null,
+      "rows": [],
+      "failure_codes": [],
+      "llm_calls": 1
+    },
+    {
+      "id": "sd18",
+      "pass": true,
+      "status": "clarify",
+      "sql": null,
+      "rows": [],
+      "failure_codes": [],
+      "llm_calls": 1
+    }
+  ]
+}

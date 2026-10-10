@@ -1,0 +1,33 @@
+services:
+  api:
+    build: .
+    image: support-assistant:cpu
+    ports:
+      - "8000:8000"
+    env_file: .env
+    environment:
+      HF_HOME: /hf_cache
+      HF_HUB_OFFLINE: "1"
+      DB_PATH: /app/data/db/support.db
+      TRACE_PATH: /app/logs/traces.jsonl
+      LLM_MODEL: ${LLM_MODEL:-openai/gpt-oss-20b}
+    volumes:
+      - hf_cache:/hf_cache
+      - index_cache:/app/data/index
+      - llm_cache:/app/data/llm_cache
+      - ./logs:/app/logs
+      - ./data/db:/app/data/db:ro
+      - ./results/runs/route-e5small/model:/app/results/runs/route-e5small/model:ro
+      - ./results/runs/e5-small-e15/model:/app/results/runs/e5-small-e15/model:ro
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request, sys; sys.exit(0 if urllib.request.urlopen('http://127.0.0.1:8000/health', timeout=3).status == 200 else 1)"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 180s
+    restart: unless-stopped
+
+volumes:
+  hf_cache:
+  index_cache:
+  llm_cache:
