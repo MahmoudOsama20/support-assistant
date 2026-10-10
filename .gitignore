@@ -42,3 +42,4 @@ tests/__pycache__/
 
 # Trained weights (large); metrics/predictions in results/runs/ ARE tracked
 results/runs/*/model/logs/
+!data/eval/
