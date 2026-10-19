@@ -48,6 +48,33 @@ python src/service/trace_stats.py --exclude-cached              # p50/p95 per ro
 
 Endpoints: `POST /chat` (`{"query": "..."}`, 1-2000 chars), `GET /health`. Response types: `rag_answer`, `sql_answer`, `clarification`, `refusal`, `error`. Every response carries a `request_id` (also the `X-Request-ID` header).
 
+## Web UI (Next.js + TypeScript + Tailwind CSS)
+
+A complete, production-style web interface is provided in the `frontend/` directory with full English & Arabic (RTL) support, interactive citations, structured SQL tables, developer inspection panel, and theme customization.
+
+### Start the Web UI
+
+```powershell
+cd frontend
+npm install
+npm run dev        # http://localhost:3000
+```
+
+Configure backend connectivity in `frontend/.env.local`:
+```
+BACKEND_URL=http://127.0.0.1:8000
+```
+
+Run frontend quality checks:
+```powershell
+npm run test         # 12 Vitest tests passing
+npm run type-check   # strict TypeScript passing
+npm run lint         # ESLint passing (0 errors, 0 warnings)
+npm run build        # Production Next.js build
+```
+
+Full frontend documentation, architecture, and deployment guide: `frontend/README.md`.
+
 ## Docker
 
 ```powershell

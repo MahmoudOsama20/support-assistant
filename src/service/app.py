@@ -12,6 +12,7 @@ from pathlib import Path
 from typing import Any
 
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
 from agent.schemas import (
@@ -117,6 +118,15 @@ def create_app(
 
     app = FastAPI(title="Nile Wallet Support Assistant", lifespan=lifespan)
     app.state.ready = False
+
+    app.add_middleware(
+        CORSMiddleware,
+        allow_origins=["*"],
+        allow_credentials=True,
+        allow_methods=["*"],
+        allow_headers=["*"],
+        expose_headers=["X-Request-ID"],
+    )
 
     @app.middleware("http")
     async def request_id_middleware(request, call_next):
